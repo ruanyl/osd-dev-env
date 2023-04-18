@@ -1,0 +1,6 @@
+opensearchJavaOpts: "-Xmx16G -Xms16G"
+
+resources:
+  requests:
+    cpu: "4"
+    memory: "32Gi"
