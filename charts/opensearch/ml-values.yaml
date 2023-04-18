@@ -1,0 +1,7 @@
+---
+nodeGroup: "machinelearning"
+
+roles:
+  - ml
+
+replicas: 2
