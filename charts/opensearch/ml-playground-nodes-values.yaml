@@ -4,3 +4,6 @@ resources:
   requests:
     cpu: "4"
     memory: "32Gi"
+
+sampleData:
+  enabled: true
