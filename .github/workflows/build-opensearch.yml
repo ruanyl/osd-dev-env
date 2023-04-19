@@ -72,6 +72,9 @@ jobs:
           ls -l tar/builds
           ls -l tar/builds/opensearch
           ./assemble.sh tar/builds/opensearch/manifest.yml
+          ls -l
+          ls -l tar/
+          ls -l tar/builds
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
