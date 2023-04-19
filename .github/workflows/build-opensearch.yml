@@ -59,9 +59,10 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: ${{ env.PYTHON_VERSION }}
-      - name: Install Pipenv and Dependencies
+      - name: Install Dependencies
         run: |
           python -m pip install --upgrade pipenv wheel
+          sudo apt-get install libopenblas-dev gfortran -y
       - name: Build and assemble
         run: |
           cd opensearch-build
