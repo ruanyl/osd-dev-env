@@ -1,0 +1,70 @@
+name: Build OpenSearch
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_version:
+        description: 'Which version of OpenSearch that this build is targeting'
+        required: true
+      architecture:
+        description: 'Choose architecture'
+        type: choice
+        required: true
+        options:
+        - x64
+        - arm64
+      platform:
+        description: 'Choose platform'
+        type: choice
+        required: true
+        options:
+        - linux
+        - darwin
+        - windows
+      distribution:
+        description: 'Choose distribution'
+        type: choice
+        required: true
+        options:
+        - tar
+        - zip
+        - rmp
+        - deb
+      is_snapshot:
+        type: boolean
+        description: 'Is this a snapshot build'
+        required: false
+        default: false
+
+jobs:
+  build-opensearch:
+    runs-on: ubuntu-latest
+    env:
+      PYTHON_VERSION: 3.7
+      JDK_VERSION: 14
+      RELEASE_TAG: ${{ github.event.inputs.target_version }}-experimental.${{ github.run_id }}
+      TARGET_VERSION: ${{ github.event.inputs.target_version }}
+      ARCH: ${{ github.event.inputs.architecture }}
+      PLATFORM: ${{ github.event.inputs.platform }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: opensearch-project/opensearch-build
+      - name: Set Up JDK ${{ env.JDK_VERSION }}
+        uses: actions/setup-java@v1
+        with:
+          java-version: ${{ env.JDK_VERSION }}
+      - name: Set up Python ${{ env.PYTHON_VERSION }}
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - name: Install Pipenv and Dependencies
+        run: |
+          python -m pip install --upgrade pipenv wheel
+      - name: Build and assemble
+        run: |
+          cd opensearch-build
+          ./build.sh manifests/${{ env.TARGET_VERSION }}/opensearch-${{ env.TARGET_VERSION }}.yml --architecture ${{ env.ARCH }} --platform ${{ env.PLATFORM }}
+          ./assemble.sh builds/opensearch/manifest.yml
+          ls -l builds
+          ls -l builds/opensearch
