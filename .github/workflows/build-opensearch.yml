@@ -67,9 +67,10 @@ jobs:
         run: |
           cd opensearch-build
           ./build.sh manifests/${{ env.TARGET_VERSION }}/opensearch-${{ env.TARGET_VERSION }}.yml --architecture ${{ env.ARCH }} --platform ${{ env.PLATFORM }}
-          ./assemble.sh builds/opensearch/manifest.yml
+          ls -l
           ls -l builds
           ls -l builds/opensearch
+          ./assemble.sh builds/opensearch/manifest.yml
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
