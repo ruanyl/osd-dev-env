@@ -69,3 +69,10 @@ jobs:
           ./assemble.sh builds/opensearch/manifest.yml
           ls -l builds
           ls -l builds/opensearch
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: artifact
+          path: opensearch-build/dist/
+          if-no-files-found: error
+        
