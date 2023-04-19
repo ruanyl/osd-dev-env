@@ -96,31 +96,30 @@ securityContext:
   runAsNonRoot: true
   runAsUser: 1000
 
-config: {}
+config:
   # Default OpenSearch Dashboards configuration from docker image of Dashboards
-
-  #  opensearch_dashboards.yml: |
-  #   server:
-  #     name: dashboards
-  #     host: "{{ .Values.serverHost }}"
-
-  #  opensearch_dashboards.yml:
-  #   server:
-  #     name: dashboards
-  #     host: "{{ .Values.serverHost }}"
-
-
-  # Dashboards TLS Config (Ensure the cert files are present before enabling SSL
-      # ssl:
-      #   enabled: true
-      #   key: /usr/share/opensearch-dashboards/certs/dashboards-key.pem
-      #   certificate: /usr/share/opensearch-dashboards/certs/dashboards-crt.pem
-
-    # determines how dashboards will verify certificates (needs to be none for default opensearch certificates to work)
-    # opensearch:
-    #   ssl:
-    #     certificateAuthorities: /usr/share/opensearch-dashboards/certs/dashboards-root-ca.pem
-    #     if utilizing custom CA certs for connection to opensearch, provide the CA here
+  opensearch_dashboards.yml:
+    opensearch.hosts: [https://localhost:9200]
+    opensearch.ssl.verificationMode: none
+    opensearch.username: kibanaserver
+    opensearch.password: <secret:/app/data/opensearch/internal_users~kibanaserver>
+    opensearch.requestHeadersWhitelist: [authorization, securitytenant]
+    opensearch_security.auth.anonymous_auth_enabled: true
+    opensearch_security.multitenancy.enabled: false
+    opensearch_security.multitenancy.tenants.preferred: [Global, Private]
+    opensearch_security.readonly_mode.roles: [kibana_read_only]
+    # Use this setting if you are running opensearch-dashboards without https
+    opensearch_security.cookie.secure: false
+    server.host: '0.0.0.0'
+    # Use the consolidated menu and global header bar
+    opensearchDashboards.branding.useExpandedHeader: false
+    # Enable multiple datasource
+    data_source.enabled: true
+    # Enable ml_commons_dashboards
+    ml_commons_dashboards.enabled: true
+    # Content security policy(csp) settings
+    csp.rules: [ "connect-src 'self' www.google-analytics.com vectors.maps.opensearch.org tiles.maps.opensearch.org maps.opensearch.org;" ]
+    csp.warnLegacyBrowsers: false
 
 opensearchDashboardsYml:
   defaultMode:
@@ -256,5 +255,3 @@ plugins:
   enabled: false
   installList: []
   # - example-fake-plugin-downloadable-url
-
-mlCommonsDashboardsEnabled: true
