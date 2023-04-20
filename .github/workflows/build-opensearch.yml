@@ -1,4 +1,4 @@
-name: Build OpenSearch
+name: Build OpenSearch for Treadstone
 
 on:
   workflow_dispatch:
@@ -6,12 +6,6 @@ on:
       target_version:
         description: 'Which version of OpenSearch that this build is targeting'
         required: true
-      opensearch_repo:
-        description: 'OpenSearch git repository'
-        required: false
-      opensearch_ref:
-        description: 'OpenSearch git ref'
-        required: false
       architecture:
         description: 'Choose architecture'
         type: choice
@@ -27,6 +21,12 @@ on:
         - linux
         - darwin
         - windows
+      opensearch_repo:
+        description: 'OpenSearch git repository(optional)'
+        required: false
+      opensearch_ref:
+        description: 'OpenSearch git ref(optional)'
+        required: false
 
 jobs:
   build-opensearch:
@@ -35,11 +35,12 @@ jobs:
       PYTHON_VERSION: 3.7
       JDK_VERSION: 14
       RELEASE_TAG: ${{ github.event.inputs.target_version }}-experimental.${{ github.run_id }}
-      TARGET_VERSION: ${{ github.event.inputs.target_version }}
-      OPENSEARCH_REPO: ${{ github.event.inputs.opensearch_repo }}
-      OPENSEARCH_REF: ${{ github.event.inputs.opensearch_ref }}
-      ARCH: ${{ github.event.inputs.architecture }}
-      PLATFORM: ${{ github.event.inputs.platform }}
+      TARGET_VERSION: ${{ github.event.inputs.target_version || '2.7.0' }}
+      OPENSEARCH_REPO: ${{ github.event.inputs.opensearch_repo || 'https://github.com/msfroh/OpenSearch.git' }}
+      OPENSEARCH_REF: ${{ github.event.inputs.opensearch_ref || '2.7_search_pipelines' }}
+      ARCH: ${{ github.event.inputs.architecture || 'x64' }}
+      PLATFORM: ${{ github.event.inputs.platform || 'linux' }}
+      ARTIFACT_NAME: opensearch-${{ env.TARGET_VERSION}}-${{ env.PLATFORM }}-${{ env.ARCH }}.tar.gz
     steps:
       - uses: actions/checkout@v3
         with:
@@ -74,17 +75,10 @@ jobs:
         run: |
           cd opensearch-build
           ./build.sh manifests/${{ env.TARGET_VERSION }}/opensearch-${{ env.TARGET_VERSION }}.yml --architecture ${{ env.ARCH }} --platform ${{ env.PLATFORM }}
-          pwd
-          ls -l
-          ls -l tar/builds
-          ls -l tar/builds/opensearch
           ./assemble.sh tar/builds/opensearch/manifest.yml
-          ls -l
-          ls -l tar/
-          ls -l tar/builds
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: artifact
-          path: opensearch-build/tar/dist/opensearch/opensearch-${{ env.TARGET_VERSION}}-${{ env.PLATFORM }}-${{ env.ARCH }}.tar.gz
+          name: ${{ env.ARTIFACT_NAME }}
+          path: opensearch-build/tar/dist/opensearch/${{ env.ARTIFACT_NAME }}
           if-no-files-found: error
