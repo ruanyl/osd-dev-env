@@ -321,7 +321,7 @@ spec:
           if ./bin/opensearch-plugin list | grep -q {{ index $plugin "name" }}; then
             ./bin/opensearch-plugin remove {{ index $plugin "name" }}
           fi
-          ./bin/opensearch-plugin install {{ index $plugin "url" }}
+          ./bin/opensearch-plugin install --batch {{ index $plugin "url" }}
           {{- end }}
 
           {{- if .Values.plugins.enabled }}
