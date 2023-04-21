@@ -1,0 +1,29 @@
+name: Publish plugins to release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish-plugins:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          path: opensearch-dev-env
+      - name: Install Dependencies
+        run: |
+          sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+          sudo chmod a+x /usr/local/bin/yq
+          /usr/local/bin/yq --version
+      - name: Publish untracked plugins
+        run: |
+          cd opensearch-dev-env
+          plugins=$(yq e -o=j -I=0 '.plugins[]' ./charts/opensearch-dashboards/plugins/manifest.yaml)
+          for line in $plugins; do
+            name=$(echo "$line" | yq e '.name' -)
+            url=$(echo "$line" | yq e '.url' -)
+            echo "Name: $name"
+            echo 'URL: $url'
+          done
