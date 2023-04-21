@@ -316,13 +316,13 @@ spec:
           #!/usr/bin/env bash
           set -euo pipefail
 
-          {{- range $path, $_ := .Files.Glob "plugins/*.json" }}
-          {{- $plugin := $.Files.Get $path | fromJson }}
-          if ./bin/opensearch-plugin list | grep -q {{ index $plugin "name" }}; then
-            ./bin/opensearch-plugin remove {{ index $plugin "name" }}
+          {{- $artifacts := .Files.Get "plugins/artifacts.json" | fromJson }}
+          {{- range $plugin := $artifacts.plugins  }}
+          if ./bin/opensearch-plugin list | grep -q {{ $plugin.name }}; then
+            ./bin/opensearch-plugin remove {{ $plugin.name }}
           fi
-          ./bin/opensearch-plugin install --batch {{ index $plugin "url" }}
-          {{- end }}
+          ./bin/opensearch-plugin install --batch {{ $plugin.url }}
+          {{- end  }}
 
           {{- if .Values.plugins.enabled }}
           {{- range $plugin := .Values.plugins.installList }}

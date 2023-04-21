@@ -1,0 +1,9 @@
+{
+  "plugins": [
+    {
+      "name": "mlCommonsDashboards",
+      "url": "https://ruanyl-test-bucket.s3.us-west-2.amazonaws.com/mlCommonsDashboards-2.7.0.zip?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEKr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDmFwLW5vcnRoZWFzdC0yIkcwRQIhAOFVHHyq8eG%2Fa%2F6LxYkhOYFlamojf90QGQL%2FLw6E%2FWKAAiArtVGQHefLpl20msV%2FusAA%2BLp%2FHS2zQQXIgu3%2FL6jVoCrsAgij%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDgyOTA4Mzk2ODI0NyIMzlsJHVlUzlHMCPmaKsACPmc1iV%2BACGgvYNUgIz3k8zy38HhNTyfI1BQncLUg3IMuRqNv9iQjb7lLWfYFsyjvxIMsT9yRNyTyZASsRqPub4G0fGlWHNhUem4uHyStoBMz0qCkdDHiDxfWrffzTSJwiTzv1KMxEZ61zYRgSVq2JB96HKEeNWBwoFQxB3TelzW8Vc1JFVUlpgid11DgKsIkxufEKF4sHRv3hOQMi32E9s5h%2Bfd8Bm0uQwRWRikBmd0D4JerU2%2FYJFusqeix7MwD2LFJa96JShwCQJnECwkSqX8ndTxXz%2BeQ6P98tn5Ht8nhi3MWYVWcRM4Fr8ABnWB9WLbKSGvJD70%2BUa4Usy0%2B3q1E6X2qAygRL2PxlAUozeUkdPoFt%2FP6%2FCB%2FjFuesHt%2BPuhDbCBEdSxKRgNI7Bvcwkkk3FGDDIvmUuhxyNXp3HAw4r%2BJogY6hwI%2FjSuS7ldZPBbz3f5rQrbAKeo1apbmfu6%2FSPHectb%2FuJgAmt%2BUwJ1oCk5NIUptV92YLKC9yJuMSbA0GMWnUo2TbAAyOxGS5PIdAs%2BKZTlrqwfQaH0zZx8xf%2FOyXJtFoZYV9p8YKoUe3F2esUpTy51G0kgm718k0enB3RICfUAHq2Q4W28aP5tSZYGUhYUQSRelEKmwawySgfDu6SYlImhiaFpq5da3gZ5pInVrzmlzj5CvQBG0QWLMzwXqkb2egw8cARFh%2BzBHGgtD9FKTc%2FpEmq4sATVofaUNsBswxI7SVFgr3eaWXqedbKdAdzn7PRXjSJdJ277a9F8DtpJa7ZKqhBMVSOq%2FXA%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230421T100739Z&X-Amz-SignedHeaders=host&X-Amz-Expires=10800&X-Amz-Credential=ASIA4CCKBML3334H2Q5I%2F20230421%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Signature=696aa32dbc9c42e8befee0aeac8f3d4d9339bb389e399694d01b8a6f5bdad2b6"
+    }
+  ]
+}
+

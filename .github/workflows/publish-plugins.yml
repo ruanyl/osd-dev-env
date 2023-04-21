@@ -9,10 +9,12 @@ on:
 jobs:
   publish-plugins:
     runs-on: ubuntu-latest
+    env:
+      RELEASE_TAG: artifacts.${{ github.run_id }}
     steps:
       - uses: actions/checkout@v3
         with:
-          path: opensearch-dev-env
+          fetch-depth: 0
       - name: Install Dependencies
         run: |
           sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
@@ -20,11 +22,59 @@ jobs:
           /usr/local/bin/yq --version
       - name: Publish untracked plugins
         run: |
-          cd opensearch-dev-env
-          plugins=$(yq e -o=j -I=0 '.plugins[]' ./charts/opensearch-dashboards/plugins/manifest.yaml)
-          for line in $plugins; do
-            name=$(echo "$line" | yq e '.name' -)
-            url=$(echo "$line" | yq e '.url' -)
-            echo "Name: $name"
-            echo "URL: $url"
+          mkdir .downloads
+
+          paths=(./charts/opensearch-dashboards/plugins/artifacts.json ./charts/opensearch/plugins/artifacts.json)
+          for path in "${paths[@]}"; do
+            plugins=$(yq e -o=j -I=0 '.plugins[]' $path)
+            curl --version
+            for line in $plugins; do
+              name=$(echo "$line" | yq e '.name' -)
+              url=$(echo "$line" | yq e '.url' -)
+              echo "Name: $name"
+              echo "URL: $url"
+              if [[ $url != "${{ github.server_url }}/${{ github.repository }}"* ]]; then
+                curl -o ./.downloads/$name.zip -L $url
+              fi
+            done
           done
+      - name: Create Release Tag
+        run: |
+          git tag ${{ env.RELEASE_TAG }}
+          git push origin ${{ env.RELEASE_TAG }}
+      - name: Release
+        id: release
+        uses: softprops/action-gh-release@v1
+        with:
+          prerelease: true
+          files: ./.downloads/*
+          tag_name: ${{ env.RELEASE_TAG }}
+      - name: Update manifest
+        run: |
+          artifacts=$(echo '${{ steps.release.outputs.assets }}' | yq e -o=j -I=0 '.[]' -)
+          for line in $artifacts; do
+            echo "LINE: $line"
+            filename=$(echo "$line" | yq e '.name' -)
+            echo "filename: $filename"
+            # filename without extension which should be the plugin name
+            name="${filename%.*}"
+            url=$(echo "$line" | yq e '.browser_download_url' -)
+            echo "Name: $name, URL: $url"
+
+            paths=(./charts/opensearch-dashboards/plugins/artifacts.json ./charts/opensearch/plugins/artifacts.json)
+            for path in "${paths[@]}"; do
+              name="$name" url="$url" yq -i '.plugins |= map(select(.name == strenv(name)).url=strenv(url))' $path
+              cat $path
+            done
+          done
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          commit-message: update artifacts.json [skip ci]
+          title: Update artifacts.json
+          branch: create-pull-request/update-artifacts-json
+          signoff: true
+          delete-branch: true
+          add-paths: |
+            charts/opensearch-dashboards/plugins/artifacts.json
+            charts/opensearch/plugins/artifacts.json
