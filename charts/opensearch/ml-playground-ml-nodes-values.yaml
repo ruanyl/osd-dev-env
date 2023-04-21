@@ -1,4 +1,9 @@
 ---
+image:
+  repository: "opensearchstaging/opensearch"
+  tag: "2.7.0"
+  pullPolicy: "IfNotPresent"
+
 nodeGroup: "machinelearning"
 
 roles:

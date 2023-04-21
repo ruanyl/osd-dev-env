@@ -1,3 +1,8 @@
+image:
+  repository: "opensearchstaging/opensearch"
+  tag: "2.7.0"
+  pullPolicy: "IfNotPresent"
+
 opensearchJavaOpts: "-Xmx16G -Xms16G"
 
 resources:
