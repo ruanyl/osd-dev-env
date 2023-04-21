@@ -26,5 +26,5 @@ jobs:
             name=$(echo "$line" | yq e '.name' -)
             url=$(echo "$line" | yq e '.url' -)
             echo "Name: $name"
-            echo 'URL: $url'
+            echo "URL: $url"
           done
