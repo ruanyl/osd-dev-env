@@ -10,7 +10,7 @@ jobs:
   publish-plugins:
     runs-on: ubuntu-latest
     env:
-      RELEASE_TAG: artifacts.${{ github.run_id }}
+      RELEASE_TAG: artifacts-${{ github.run_id }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -38,18 +38,24 @@ jobs:
               fi
             done
           done
-      - name: Create Release Tag
+      - name: Create release tag if there were new plugins downloaded
+        id: tagging
         run: |
-          git tag ${{ env.RELEASE_TAG }}
-          git push origin ${{ env.RELEASE_TAG }}
-      - name: Release
+          if [ -n "$(ls .download)" ]; then
+            git tag ${{ env.RELEASE_TAG }}
+            git push origin ${{ env.RELEASE_TAG }}
+            echo "tag_created=true" >> "$GITHUB_ENV"
+          fi
+      - name: Create a release and push the downloaded plugins to assets
         id: release
+        if: env.tag_created == true
         uses: softprops/action-gh-release@v1
         with:
           prerelease: true
           files: ./.downloads/*
           tag_name: ${{ env.RELEASE_TAG }}
       - name: Update manifest
+        if: env.tag_created == true
         run: |
           artifacts=$(echo '${{ steps.release.outputs.assets }}' | yq e -o=j -I=0 '.[]' -)
           for line in $artifacts; do
@@ -68,9 +74,10 @@ jobs:
             done
           done
       - name: Create pull request
+        if: env.tag_created == true
         uses: peter-evans/create-pull-request@v5
         with:
-          commit-message: update artifacts.json [skip ci]
+          commit-message: update artifacts.json
           title: Update artifacts.json
           branch: create-pull-request/update-artifacts-json
           signoff: true
