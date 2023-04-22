@@ -2,3 +2,10 @@ image:
   repository: "opensearchstaging/opensearch-dashboards"
   tag: "2.7.0"
   pullPolicy: "IfNotPresent"
+
+replicaCount: 2
+updateStrategy:
+  type: "RollingUpdate"
+  rollingUpdate:
+    maxSurge: 1
+    maxUnavailable: 0
