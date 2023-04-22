@@ -2,7 +2,7 @@
   "plugins": [
     {
       "name": "mlCommonsDashboards",
-      "url": "https://ruanyl-test-bucket.s3.us-west-2.amazonaws.com/mlCommonsDashboards-2.7.0.zip?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDmFwLW5vcnRoZWFzdC0yIkcwRQIhAK%2FVLsA7CRsqMX6V7NVJYjnA%2FDpOOIhcmIOM95%2Fs3dPCAiApn1q9iL96yZlDvR%2BaW6jQQEC6SE3jMUXwmTeoBbvyMSrsAgiy%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDgyOTA4Mzk2ODI0NyIMY4leyY21lysJrJr7KsACkQHmixFN4%2B1bp9dBtjmy4r1vG7lekIMRjCBhvmzorcggEcn%2FC877zxF6LY%2BJ8m36n6Y1nHS%2BXvLYGOlniRHJUdirVJGSXe3F0dMtH1B77yskBu9bcFlvTGg3s4F2xrsolzITkMyI1%2BQ25mb7XtZklcEmex%2F%2BhovriP%2BhLzqNCJtlj9JQo3sx5hlOx80%2Bpg7S5pSPkvQxNQ4K7iOjsLLwiZcQHngQe4y%2Fy6AFNtBFf%2FAuL68kxFu5SHkR00mtmVzB0gB7UVdWtO4epHRypApMEg9P1d%2FYUize3NRjtkYwW52hhazorNI5PQV6VDPXJmHn0MbY3lpWPQSJDzZ9ya4nFOLiOpEZNGeKfbOjT0wgAZXHYoqDT221Pe1fYqmP1bkwt%2B3VBv%2FANYxhpCOpz7posXi6Nt6sLcXh1HQ9Q2PEqaswxOuMogY6hwJlJB4Hg5mfpCjBAGycSe5bJTE0lXrBdbXiZzYFfVdiyDfZDhSuwXWnGlAZ3QWnhkJP9W1OzPNg9pmh3Tz7rBIVG1heAr8Q7tpf6hzmiyIcExER46GjdaBbe6pBLZk8cetkvOHu1soUcd0z94%2FvJ66kj0A8PmFUQqSu1FudkfVbSAl2uyzgbTDC7qO1taOuuLS6XfR5%2BFPs1YipWWFi%2Fdx7xUYTOkFbX4C4QhBiC56Kq4WZeOf6o0m6UCq3zQqdCcX10Xl9ofvwocJpl0XDasGwuTWEhr63OyWsbpDrabgg1zMHHYkJMUJ%2FlZFquyLcD%2BcKJWxgrtdARnQmKC%2BlNINbVmuU1Sw2AQ%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230422T011834Z&X-Amz-SignedHeaders=host&X-Amz-Expires=10800&X-Amz-Credential=ASIA4CCKBML32NWCUG2C%2F20230422%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Signature=8d413e40bd4a9dfe69b2d9a66fbab2938ef72f05ec758a42c84ce847ff72a816"
+      "url": "https://github.com/ruanyl/opensearch-dev-env/releases/download/artifacts.4770138978/mlCommonsDashboards.zip"
     }
   ]
 }
