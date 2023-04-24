@@ -9,3 +9,22 @@ updateStrategy:
   rollingUpdate:
     maxSurge: 1
     maxUnavailable: 0
+
+
+ingress:
+  enabled: true
+  ingressClassName: alb
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}, {"HTTP":80}]'
+  labels: {}
+  hosts:
+    - host: treadstone.ml.playground.opensearch.org
+      paths:
+        - path: /
+          backend:
+            serviceName: "opensearch-dashboards"
+            servicePort: "80"
+
+service:
+  type: NodePort
