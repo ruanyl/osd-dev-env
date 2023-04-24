@@ -112,3 +112,4 @@ jobs:
           docker images
           docker tag opensearchproject/opensearch:$IMAGE_TAG $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG
           docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG
+          echo "Pushed docker image: $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG"

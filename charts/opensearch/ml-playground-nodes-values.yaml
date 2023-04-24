@@ -1,7 +1,12 @@
+global:
+  dockerRegistry: public.ecr.aws
+
 image:
-  repository: "opensearchstaging/opensearch"
-  tag: "2.7.0"
+  repository: "m4z9c2w0/opensearch-treadstone"
+  tag: "4777332356"
   pullPolicy: "IfNotPresent"
+
+majorVersion: "2"
 
 opensearchJavaOpts: "-Xmx16G -Xms16G"
 
