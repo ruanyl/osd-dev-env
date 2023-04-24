@@ -24,7 +24,7 @@ ingress:
         - path: /
           backend:
             serviceName: "opensearch-dashboards"
-            servicePort: "80"
+            servicePort: 80
 
 service:
   type: NodePort
