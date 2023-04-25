@@ -3,6 +3,10 @@
     {
       "name": "opensearch-ml",
       "url": "https://github.com/ruanyl/opensearch-dev-env/releases/download/ml-commons-2.7.0-SNAPSHOT-2/opensearch-ml-2.7.0.0-SNAPSHOT-2.zip"
+    },
+    {
+      "name": "opensearch-neural-search",
+      "url": "https://github.com/navneet1v/neural-search/releases/download/2.7.0-experimental.4783722157/opensearch-neural-search-2.7.0.0-SNAPSHOT.zip"
     }
   ]
 }
