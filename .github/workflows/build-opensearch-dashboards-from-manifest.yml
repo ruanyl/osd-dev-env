@@ -30,12 +30,16 @@ on:
         - linux
         - darwin
         - windows
+      node_version:
+        description: 'Nodejs version'
+        required: false
 
 jobs:
   build-opensearch-dashboards:
     runs-on: ubuntu-latest
     env:
       PYTHON_VERSION: '3.7'
+      NODE_VERSION: ${{ github.event.inputs.node_version || '14.21.3' }}
       RELEASE_TAG: ${{ github.event.inputs.target_version }}-experimental.${{ github.run_id }}
       TARGET_VERSION: ${{ github.event.inputs.target_version || '2.7.0' }}
       ARCH: ${{ github.event.inputs.architecture || 'x64' }}
@@ -74,8 +78,7 @@ jobs:
           cd opensearch-build
           # temporary patch to fix `nvm use` error when node version not installed
           source $NVM_DIR/nvm.sh
-          nvm ls
-          nvm install 14.21.3
+          nvm install ${{ env.NODE_VERSION }}
           # cp ../opensearch-dev-env/patch/build.sh ./scripts/components/OpenSearch-Dashboards/build.sh
           ./build.sh ../opensearch-dev-env/manifests/opensearch-dashboards.yml --architecture ${{ env.ARCH }} --platform ${{ env.PLATFORM }}
           ./assemble.sh tar/builds/opensearch-dashboards/manifest.yml
