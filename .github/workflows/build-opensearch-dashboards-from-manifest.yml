@@ -73,7 +73,10 @@ jobs:
         run: |
           cd opensearch-build
           # temporary patch to fix `nvm use` error when node version not installed
-          cp ../opensearch-dev-env/patch/build.sh ./scripts/components/OpenSearch-Dashboards/build.sh
+          source $NVM_DIR/nvm.sh
+          nvm ls
+          nvm install 14.21.3
+          # cp ../opensearch-dev-env/patch/build.sh ./scripts/components/OpenSearch-Dashboards/build.sh
           ./build.sh ../opensearch-dev-env/manifests/opensearch-dashboards.yml --architecture ${{ env.ARCH }} --platform ${{ env.PLATFORM }}
           ./assemble.sh tar/builds/opensearch-dashboards/manifest.yml
       - name: Build and push docker image
