@@ -1,3 +1,11 @@
+{{- define "opensearch-dashboards.dockerRegistry" -}}
+{{- if eq .Values.global.dockerRegistry "" -}}
+  {{- .Values.global.dockerRegistry -}}
+{{- else -}}
+  {{- .Values.global.dockerRegistry | trimSuffix "/" | printf "%s/" -}}
+{{- end -}}
+{{- end -}}
+
 {{/*
 Expand the name of the chart.
 */}}

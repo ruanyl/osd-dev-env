@@ -92,7 +92,7 @@ spec:
       - name: dashboards
         securityContext:
 {{ toYaml .Values.securityContext | indent 10 }}
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+        image: "{{ template "opensearch-dashboards.dockerRegistry" . }}{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
         imagePullPolicy: "{{ .Values.image.pullPolicy }}"
         {{- if .Values.readinessProbe }}
         readinessProbe:
