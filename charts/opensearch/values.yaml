@@ -58,6 +58,9 @@ config:
     # Start OpenSearch Security Demo Configuration
     # WARNING: revise all the lines below before you go into production
     plugins:
+      ml_commons:
+        encryption:
+          master_key: "<secret:/app/data/opensearch/ml_commons~encryption.master_key>"
       security:
         ssl:
           transport:
