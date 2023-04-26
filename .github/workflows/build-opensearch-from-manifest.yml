@@ -47,39 +47,56 @@ jobs:
       - uses: actions/checkout@v3
         with:
           path: opensearch-dev-env
+      - name: Check if the pipeline should run or not
+        run: |
+          if [ -f ./opensearch-dev-env/manifests/opensearch.yml ]; then
+            echo "should_run_workflow=true" >> "$GITHUB_ENV"
+          fi
       - uses: actions/checkout@v3
+        if: env.should_run_workflow == 'true'
         with:
           repository: opensearch-project/opensearch-build
           path: opensearch-build
       - name: Set Up JDK ${{ env.JDK_VERSION }}
+        if: env.should_run_workflow == 'true'
         uses: actions/setup-java@v1
         with:
           java-version: ${{ env.JDK_VERSION }}
       - name: Set up Python ${{ env.PYTHON_VERSION }}
+        if: env.should_run_workflow == 'true'
         uses: actions/setup-python@v3
         with:
           python-version: ${{ env.PYTHON_VERSION }}
       - name: Install Dependencies
+        if: env.should_run_workflow == 'true'
         run: |
           python -m pip install --upgrade pipenv wheel
           sudo apt-get install libopenblas-dev gfortran -y
+
+          sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+          sudo chmod a+x /usr/local/bin/yq
+          /usr/local/bin/yq --version
       - name: Configure AWS credentials
+        if: env.should_run_workflow == 'true'
         uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
       - name: Login to Amazon ECR
+        if: env.should_run_workflow == 'true'
         id: login-ecr-public
         uses: aws-actions/amazon-ecr-login@v1
         with:
           registry-type: public
       - name: Build and assemble
+        if: env.should_run_workflow == 'true'
         run: |
           cd opensearch-build
           ./build.sh ../opensearch-dev-env/manifests/opensearch.yml --architecture ${{ env.ARCH }} --platform ${{ env.PLATFORM }}
           ./assemble.sh tar/builds/opensearch/manifest.yml
       - name: Build and push docker image
+        if: env.should_run_workflow == 'true'
         env:
           REGISTRY: ${{ steps.login-ecr-public.outputs.registry }}
           REGISTRY_ALIAS: ${{ env.ECR_REGISTRY_ALIAS }}
@@ -94,3 +111,20 @@ jobs:
           docker tag opensearchproject/opensearch:$IMAGE_TAG $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG
           docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG
           echo "Pushed docker image: $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG"
+
+          cd ${{ github.workspace }}/opensearch-dev-env
+          REGISTRY=$REGISTRY yq -i '.global.dockerRegistry = strenv(REGISTRY)' ./charts/opensearch-dashboards/values.yaml
+          REGISTRY_ALIAS=$REGISTRY_ALIAS REPOSITORY=$REPOSITORY yq -i '.image.repository = strenv(REGISTRY_ALIAS)/strenv(REPOSITORY)' ./charts/opensearch-dashboards/values.yaml
+          IMAGE_TAG=$IMAGE_TAG yq -i '.image.tag = strenv(IMAGE_TAG)' ./charts/opensearch-dashboards/values.yaml
+      - name: Create pull request
+        if: env.should_run_workflow == 'true'
+        uses: peter-evans/create-pull-request@v5
+        with:
+          path: opensearch-dev-env
+          commit-message: update opensearch image
+          title: Update opensearch image
+          branch: create-pull-request/update-opensearch-image
+          signoff: true
+          delete-branch: true
+          add-paths: |
+            charts/opensearch/values.yaml
