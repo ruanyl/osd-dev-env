@@ -116,9 +116,9 @@ jobs:
           echo "Pushed docker image: $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG"
 
           cd ${{ github.workspace }}/opensearch-dev-env
-          REGISTRY=$REGISTRY yq -i '.global.dockerRegistry = strenv(REGISTRY)' ./charts/opensearch-dashboards/values.yaml
-          REGISTRY_ALIAS=$REGISTRY_ALIAS REPOSITORY=$REPOSITORY yq -i '.image.repository = strenv(REGISTRY_ALIAS)/strenv(REPOSITORY)' ./charts/opensearch-dashboards/values.yaml
-          IMAGE_TAG=$IMAGE_TAG yq -i '.image.tag = strenv(IMAGE_TAG)' ./charts/opensearch-dashboards/values.yaml
+          yq -i '.global.dockerRegistry = ${{ env.REGISTRY }}' ./charts/opensearch-dashboards/values.yaml
+          yq -i '.image.repository = ${{ env.REGISTRY_ALIAS }}/${{ env.REPOSITORY }}' ./charts/opensearch-dashboards/values.yaml
+          yq -i '.image.tag = ${{ env.IMAGE_TAG }}' ./charts/opensearch-dashboards/values.yaml
       - name: Create pull request
         if: env.should_run_workflow == 'true'
         uses: peter-evans/create-pull-request@v5
