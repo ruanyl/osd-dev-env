@@ -106,7 +106,7 @@ jobs:
           artifact_name=opensearch-${{ env.TARGET_VERSION}}-${{ env.PLATFORM }}-${{ env.ARCH }}.tar.gz
           tarball=$(realpath opensearch-build/tar/dist/opensearch/$artifact_name)
           cd ./opensearch-build/docker/release
-          ./build-image-single-arch.sh -v $IMAGE_TAG -p opensearch -a ${{ env.ARCH }} -f ./dockerfiles/opensearch.al2.dockerfile -t $tarball
+          ./build-image-single-arch.sh -v $IMAGE_TAG -p opensearch -a ${{ env.ARCH }} -f ${{ github.workspace }}/opensearch-dev-env/docker/opensearch.dockerfile -t $tarball
           docker images
           docker tag opensearchproject/opensearch:$IMAGE_TAG $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG
           docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG
