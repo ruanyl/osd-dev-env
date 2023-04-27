@@ -4,7 +4,7 @@ global:
 
 image:
   repository: "m4z9c2w0/opensearch-treadstone"
-  tag: "4777332356"
+  tag: "4816141528"
   pullPolicy: "IfNotPresent"
 
 majorVersion: "2"

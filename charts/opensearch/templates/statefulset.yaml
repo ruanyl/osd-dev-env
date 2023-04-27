@@ -261,7 +261,7 @@ spec:
         image: "{{ template "opensearch.dockerRegistry" . }}{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
         imagePullPolicy: "{{ .Values.image.pullPolicy }}"
         command:
-        - sh
+        - bash
         - -c
         - |
           #!/usr/bin/env bash
@@ -310,7 +310,7 @@ spec:
         securityContext:
 {{ toYaml .Values.securityContext | indent 10 }}
         command:
-        - sh
+        - bash
         - -c
         - |
           #!/usr/bin/env bash
@@ -478,7 +478,7 @@ spec:
         image: "{{ template "opensearch.dockerRegistry" . }}{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
         imagePullPolicy: "{{ .Values.image.pullPolicy }}"
         command:
-        - "sh"
+        - bash
         - -c
         - |
           #!/usr/bin/env bash
