@@ -21,15 +21,12 @@ on:
         required: true
         options:
         - x64
-        - arm64
       platform:
         description: 'Choose platform'
         type: choice
         required: true
         options:
         - linux
-        - darwin
-        - windows
       node_version:
         description: 'Nodejs version'
         required: false
@@ -40,7 +37,6 @@ jobs:
     env:
       PYTHON_VERSION: '3.7'
       NODE_VERSION: ${{ github.event.inputs.node_version || '14.21.3' }}
-      RELEASE_TAG: ${{ github.event.inputs.target_version }}-experimental.${{ github.run_id }}
       TARGET_VERSION: ${{ github.event.inputs.target_version || '2.7.0' }}
       ARCH: ${{ github.event.inputs.architecture || 'x64' }}
       PLATFORM: ${{ github.event.inputs.platform || 'linux' }}
