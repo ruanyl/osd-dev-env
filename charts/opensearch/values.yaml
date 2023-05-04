@@ -22,7 +22,7 @@ roles:
 replicas: 2
 
 # if not set, falls back to parsing .Values.imageTag, then .Chart.appVersion.
-majorVersion: ""
+majorVersion: "2"
 
 global:
   # Set if you want to change the default docker registry, e.g. a private one.
@@ -58,9 +58,6 @@ config:
     # Start OpenSearch Security Demo Configuration
     # WARNING: revise all the lines below before you go into production
     plugins:
-      ml_commons:
-        encryption:
-          master_key: "<secret:/app/data/opensearch/ml_commons~encryption.master_key>"
       security:
         ssl:
           transport:
@@ -129,7 +126,7 @@ hostAliases: []
 image:
   repository: "opensearchproject/opensearch"
   # override image tag, which is .Chart.AppVersion by default
-  tag: ""
+  tag: "latest"
   pullPolicy: "IfNotPresent"
 
 podAnnotations: {}

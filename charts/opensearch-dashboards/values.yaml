@@ -15,7 +15,7 @@ global:
 image:
   repository: "opensearchproject/opensearch-dashboards"
   # override image tag, which is .Chart.AppVersion by default
-  tag: ""
+  tag: "latest"
   pullPolicy: "IfNotPresent"
 
 startupProbe:
@@ -147,7 +147,7 @@ hostAliases: []
 serverHost: "0.0.0.0"
 
 service:
-  type: LoadBalancer
+  type: ClusterIP
   # The IP family and IP families options are to set the behaviour in a dual-stack environment
   # Omitting these values will let the service fall back to whatever the CNI dictates the defaults
   # should be
