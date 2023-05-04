@@ -106,7 +106,7 @@ config:
     opensearch.hosts: [https://localhost:9200]
     opensearch.ssl.verificationMode: none
     opensearch.username: kibanaserver
-    opensearch.password: <secret:/app/data/opensearch/internal_users~kibanaserver>
+    opensearch.password: <secret:/app/data/demo/internal_users~kibanaserver>
     opensearch.requestHeadersWhitelist: [authorization, securitytenant]
     opensearch_security.auth.anonymous_auth_enabled: true
     opensearch_security.multitenancy.enabled: false
@@ -166,25 +166,18 @@ service:
   httpPortName: http
 
 ingress:
-  enabled: false
-  # For Kubernetes >= 1.18 you should specify the ingress-controller via the field ingressClassName
-  # See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#specifying-the-class-of-an-ingress
-  # ingressClassName: nginx
-  annotations: {}
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
+  enabled: true
+  ingressClassName: alb
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+      # WARNING: HTTPS should be enabled for production deployment
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+    alb.ingress.kubernetes.io/target-type: ip
   labels: {}
   hosts:
-    - host: chart-example.local
-      paths:
+    - paths:
         - path: /
-          backend:
-            serviceName: ""
-            servicePort: ""
-  tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
+          backend: {}
 
 resources:
   requests:
