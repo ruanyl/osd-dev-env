@@ -18,6 +18,7 @@ roles:
   - ingest
   - data
   - remote_cluster_client
+  - ml
 
 replicas: 2
 
