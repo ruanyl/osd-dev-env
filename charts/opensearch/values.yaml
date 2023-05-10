@@ -1107,7 +1107,7 @@ tolerations: []
 # Enabling this will publically expose your OpenSearch instance.
 # Only enable this if you have security enabled on your cluster
 ingress:
-  enabled: false
+  enabled: true
   ingressClassName: alb
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
