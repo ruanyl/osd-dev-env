@@ -127,7 +127,7 @@ hostAliases: []
 image:
   repository: "opensearchproject/opensearch"
   # override image tag, which is .Chart.AppVersion by default
-  tag: "latest"
+  tag: "2.8.0"
   pullPolicy: "IfNotPresent"
 
 podAnnotations: {}
