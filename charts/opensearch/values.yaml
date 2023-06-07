@@ -27,7 +27,7 @@ majorVersion: "2"
 
 global:
   # Set if you want to change the default docker registry, e.g. a private one.
-  dockerRegistry: ""
+  dockerRegistry: "public.ecr.aws"
 
 # Allows you to add any config files in {{ .Values.opensearchHome }}/config
 opensearchHome: /usr/share/opensearch
@@ -125,7 +125,7 @@ hostAliases: []
 #   - "bar.local"
 
 image:
-  repository: "opensearchproject/opensearch"
+  repository: "r9h9r7k4/opensearch-dev"
   # override image tag, which is .Chart.AppVersion by default
   tag: "5197851470"
   pullPolicy: "IfNotPresent"
