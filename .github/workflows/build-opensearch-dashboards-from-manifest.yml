@@ -1,30 +1,38 @@
 name: Build OpenSearch-Dashboards from manifest
 
 on:
+  schedule:
+    - cron: '30 16 * * *'
   workflow_dispatch:
     inputs:
       aws_region:
         description: 'AWS region'
         required: true
+        default: 'us-east-1'
       ecr_registry_alias:
         description: 'ECR registry alias'
         required: true
+        default: 'r9h9r7k4'
       ecr_repository:
         description: 'ECR repository'
         required: true
+        default: 'opensearch-dashboards-dev'
       target_version:
         description: 'Which version of OpenSearch that this build is targeting'
         required: true
+        default: '3.0.0'
       architecture:
         description: 'Choose architecture'
         type: choice
         required: true
+        default: 'x64'
         options:
         - x64
       platform:
         description: 'Choose platform'
         type: choice
         required: true
+        default: 'linux'
         options:
         - linux
       node_version:
