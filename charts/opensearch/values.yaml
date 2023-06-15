@@ -62,6 +62,7 @@ config:
       ml_commons:
         allow_registering_model_via_url: true
         allow_registering_model_via_local_file: true
+        model_access_control_enabled: true
       security:
         ssl:
           transport:
