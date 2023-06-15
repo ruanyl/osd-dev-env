@@ -59,6 +59,9 @@ config:
     # Start OpenSearch Security Demo Configuration
     # WARNING: revise all the lines below before you go into production
     plugins:
+      ml_commons:
+        allow_registering_model_via_url: true
+        allow_registering_model_via_local_file: true
       security:
         ssl:
           transport:
