@@ -1,3 +1,8 @@
 {
-  "plugins": []
+  "plugins": [
+    {
+      "name": "mlCommonsDashboards",
+      "url": "https://github.com/ruanyl/ml-commons-dashboards/releases/download/2.8.0-experimental.5274619159/mlCommonsDashboards-2.8.0.zip"
+    }
+  ]
 }
