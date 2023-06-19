@@ -7,31 +7,31 @@ on:
     inputs:
       aws_region:
         description: 'AWS region'
-        required: true
+        required: false
         default: 'us-east-1'
       ecr_registry_alias:
         description: 'ECR registry alias'
-        required: true
+        required: false
         default: 'r9h9r7k4'
       ecr_repository:
         description: 'ECR repository'
-        required: true
+        required: false
         default: 'opensearch-dashboards-dev'
       target_version:
         description: 'Which version of OpenSearch that this build is targeting'
-        required: true
+        required: false
         default: '3.0.0'
       architecture:
         description: 'Choose architecture'
         type: choice
-        required: true
+        required: false
         default: 'x64'
         options:
         - x64
       platform:
         description: 'Choose platform'
         type: choice
-        required: true
+        required: false
         default: 'linux'
         options:
         - linux
