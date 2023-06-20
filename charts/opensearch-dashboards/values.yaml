@@ -122,7 +122,7 @@ config:
     # Enable ml_commons_dashboards
     ml_commons_dashboards.enabled: true
     # Content security policy(csp) settings
-    csp.rules: [ "connect-src 'self' www.google-analytics.com vectors.maps.opensearch.org tiles.maps.opensearch.org maps.opensearch.org 43.206.149.144:8080;" ]
+    csp.rules: [ "connect-src 'self' www.google-analytics.com vectors.maps.opensearch.org tiles.maps.opensearch.org maps.opensearch.org 43.206.149.144:8080 43.206.149.144:8082;" ]
     csp.warnLegacyBrowsers: false
 
 opensearchDashboardsYml:
