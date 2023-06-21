@@ -45,12 +45,12 @@ jobs:
     env:
       PYTHON_VERSION: '3.7'
       NODE_VERSION: ${{ github.event.inputs.node_version || '18.16.0' }}
-      TARGET_VERSION: ${{ github.event.inputs.target_version || '2.7.0' }}
+      TARGET_VERSION: ${{ github.event.inputs.target_version || '3.0.0' }}
       ARCH: ${{ github.event.inputs.architecture || 'x64' }}
       PLATFORM: ${{ github.event.inputs.platform || 'linux' }}
-      AWS_REGION: ${{ github.event.inputs.aws_region }}
-      ECR_REGISTRY_ALIAS: ${{ github.event.inputs.ecr_registry_alias }}
-      ECR_REPOSITORY: ${{ github.event.inputs.ecr_repository }}
+      AWS_REGION: ${{ github.event.inputs.aws_region || 'us-east-1' }}
+      ECR_REGISTRY_ALIAS: ${{ github.event.inputs.ecr_registry_alias || 'r9h9r7k4' }}
+      ECR_REPOSITORY: ${{ github.event.inputs.ecr_repository || 'opensearch-dashboards-dev' }}
     steps:
       - uses: actions/checkout@v3
         with:
