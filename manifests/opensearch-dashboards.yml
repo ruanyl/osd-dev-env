@@ -19,9 +19,6 @@ components:
   - name: securityDashboards
     repository: https://github.com/opensearch-project/security-dashboards-plugin.git
     ref: 8dab6a3ef00c7127f6713701187abac1addfc68a
-  - name: queryWorkbenchDashboards
-    repository: https://github.com/opensearch-project/dashboards-query-workbench.git
-    ref: main
   - name: searchRelevanceDashboards
     repository: https://github.com/opensearch-project/dashboards-search-relevance.git
     ref: main
