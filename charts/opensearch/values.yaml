@@ -1,16 +1,13 @@
 ---
 clusterName: "opensearch-cluster"
 nodeGroup: "master"
-
 # If discovery.type in the opensearch configuration is set to "single-node",
 # this should be set to "true"
 # If "true", replicas will be forced to 1
 singleNode: false
-
 # The service that non master groups will try to connect to when joining the cluster
 # This should be set to clusterName + "-" + nodeGroup for your master group
 masterService: "opensearch-cluster-master"
-
 # OpenSearch roles that will be applied to this nodeGroup
 # These will be set as environment variable "node.roles". E.g. node.roles=master,ingest,data,remote_cluster_client
 roles:
@@ -19,16 +16,12 @@ roles:
   - data
   - remote_cluster_client
   - ml
-
 replicas: 2
-
 # if not set, falls back to parsing .Values.imageTag, then .Chart.appVersion.
 majorVersion: "2"
-
 global:
   # Set if you want to change the default docker registry, e.g. a private one.
   dockerRegistry: "public.ecr.aws"
-
 # Allows you to add any config files in {{ .Values.opensearchHome }}/config
 opensearchHome: /usr/share/opensearch
 # such as opensearch.yml and log4j2.properties
@@ -98,14 +91,12 @@ config:
             ]
     ######## End OpenSearch Security Demo Configuration ########
   # log4j2.properties:
-
 # Extra environment variables to append to this nodeGroup
 # This will be appended to the current 'env:' key. You can use any of the kubernetes env
 # syntax here
 extraEnvs:
   - name: DISABLE_INSTALL_DEMO_CONFIG
     value: "false"
-
 # Allows you to load environment variables from kubernetes secret or config map
 envFrom: []
 # - secretRef:
@@ -117,7 +108,6 @@ envFrom: []
 # This is useful for mounting certificates for security and for mounting
 # the X-Pack license
 secretMounts: []
-
 hostAliases: []
 # - ip: "127.0.0.1"
 #   hostnames:
@@ -127,22 +117,18 @@ hostAliases: []
 image:
   repository: "r9h9r7k4/opensearch-dev"
   # override image tag, which is .Chart.AppVersion by default
-  tag: "5197851470"
+  tag: "5374121196"
   pullPolicy: "IfNotPresent"
-
 podAnnotations: {}
-  # iam.amazonaws.com/role: es-cluster
+# iam.amazonaws.com/role: es-cluster
 
 # additionals labels
 labels: {}
-
 opensearchJavaOpts: "-Xmx512M -Xms512M"
-
 resources:
   requests:
     cpu: "2"
     memory: "8Gi"
-
 initResources: {}
 #  limits:
 #     cpu: "25m"
@@ -160,12 +146,10 @@ sidecarResources: {}
 #     memory: "128Mi"
 
 networkHost: "0.0.0.0"
-
 rbac:
   create: false
   serviceAccountAnnotations: {}
   serviceAccountName: ""
-
 podSecurityPolicy:
   create: false
   name: ""
@@ -184,7 +168,6 @@ podSecurityPolicy:
       - configMap
       - persistentVolumeClaim
       - emptyDir
-
 persistence:
   enabled: true
   # Set to false to disable the `fsgroup-volume` initContainer that will update permissions on the persistent disk.
@@ -208,63 +191,53 @@ persistence:
     - ReadWriteOnce
   size: 120Gi
   annotations: {}
-
 extraVolumes: []
-  # - name: extras
-  #   emptyDir: {}
+# - name: extras
+#   emptyDir: {}
 
 extraVolumeMounts: []
-  # - name: extras
-  #   mountPath: /usr/share/extras
-  #   readOnly: true
+# - name: extras
+#   mountPath: /usr/share/extras
+#   readOnly: true
 
 extraContainers: []
-  # - name: do-something
-  #   image: busybox
-  #   command: ['do', 'something']
+# - name: do-something
+#   image: busybox
+#   command: ['do', 'something']
 
 extraInitContainers: []
-  # - name: do-somethings
-  #   image: busybox
-  #   command: ['do', 'something']
+# - name: do-somethings
+#   image: busybox
+#   command: ['do', 'something']
 
 # This is the PriorityClass settings as defined in
 # https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/#priorityclass
 priorityClassName: ""
-
 # By default this will make sure two pods don't end up on the same node
 # Changing this to a region would allow you to spread pods across regions
 antiAffinityTopologyKey: "kubernetes.io/hostname"
-
 # Hard means that by default pods will only be scheduled if there are enough nodes for them
 # and that they will never end up on the same node. Setting this to soft will do this "best effort"
 antiAffinity: "soft"
-
 # This is the node affinity settings as defined in
 # https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#node-affinity-beta-feature
 nodeAffinity: {}
-
 # This is the pod topology spread constraints
 # https://kubernetes.io/docs/concepts/workloads/pods/pod-topology-spread-constraints/
 topologySpreadConstraints: []
-
 # The default is to deploy all pods serially. By setting this to parallel all pods are started at
 # the same time when bootstrapping the cluster
 podManagementPolicy: "Parallel"
-
 # The environment variables injected by service links are not used, but can lead to slow OpenSearch boot times when
 # there are many services in the current namespace.
 # If you experience slow pod startups you probably want to set this to `false`.
 enableServiceLinks: true
-
 protocol: https
 httpPort: 9200
 transportPort: 9300
 metricsPort: 9600
 httpHostPort: ""
 transportHostPort: ""
-
-
 service:
   labels: {}
   labelsHeadless: {}
@@ -286,18 +259,14 @@ service:
   loadBalancerIP: ""
   loadBalancerSourceRanges: []
   externalTrafficPolicy: ""
-
 updateStrategy: RollingUpdate
-
 # This is the max unavailable setting for the pod disruption budget
 # The default value of 1 will make sure that kubernetes won't allow more than 1
 # of your pods to be unavailable during maintenance
 maxUnavailable: 1
-
 podSecurityContext:
   fsGroup: 1000
   runAsUser: 1000
-
 securityContext:
   capabilities:
     drop:
@@ -305,7 +274,6 @@ securityContext:
   # readOnlyRootFilesystem: true
   runAsNonRoot: true
   runAsUser: 1000
-
 securityConfig:
   enabled: true
   path: "/usr/share/opensearch/config/opensearch-security"
@@ -952,7 +920,6 @@ securityConfig:
           reserved: true
           users:
           - "kibanaserver"
-
       action_groups.yml: |
         _meta:
           type: "actiongroups"
@@ -1066,12 +1033,9 @@ securityConfig:
             # write_ignore_users: ["test-user", "employee-*"]
             write_ignore_users:
               - kibanaserver
-
 # How long to wait for opensearch to stop gracefully
 terminationGracePeriod: 120
-
 sysctlVmMaxMapCount: 262144
-
 startupProbe:
   tcpSocket:
     port: 9200
@@ -1079,15 +1043,14 @@ startupProbe:
   periodSeconds: 10
   timeoutSeconds: 3
   failureThreshold: 30
-
 livenessProbe: {}
-  # periodSeconds: 20
-  # timeoutSeconds: 5
-  # failureThreshold: 10
-   # successThreshold: 1
-  # initialDelaySeconds: 10
-  # tcpSocket:
-  #   port: 9200
+# periodSeconds: 20
+# timeoutSeconds: 5
+# failureThreshold: 10
+# successThreshold: 1
+# initialDelaySeconds: 10
+# tcpSocket:
+#   port: 9200
 
 readinessProbe:
   tcpSocket:
@@ -1095,16 +1058,13 @@ readinessProbe:
   periodSeconds: 5
   timeoutSeconds: 3
   failureThreshold: 3
-
 ## Use an alternate scheduler.
 ## ref: https://kubernetes.io/docs/tasks/administer-cluster/configure-multiple-schedulers/
 ##
 schedulerName: ""
-
 imagePullSecrets: []
 nodeSelector: {}
 tolerations: []
-
 # Enabling this will publically expose your OpenSearch instance.
 # Only enable this if you have security enabled on your cluster
 ingress:
@@ -1112,46 +1072,43 @@ ingress:
   ingressClassName: alb
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
-      # WARNING: HTTPS should be enabled for production deployment
+    # WARNING: HTTPS should be enabled for production deployment
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/backend-protocol: HTTPS
   labels: {}
   path: /
   hosts: [""]
-
 nameOverride: ""
 fullnameOverride: ""
-
 masterTerminationFix: false
-
 opensearchLifecycle: {}
-  # preStop:
-  #   exec:
-  #     command: ["/bin/sh", "-c", "echo Hello from the preStart handler > /usr/share/message"]
-  # postStart:
-  #   exec:
-  #     command: ["/bin/sh", "-c", "echo Hello from the postStart handler > /usr/share/message"]
+# preStop:
+#   exec:
+#     command: ["/bin/sh", "-c", "echo Hello from the preStart handler > /usr/share/message"]
+# postStart:
+#   exec:
+#     command: ["/bin/sh", "-c", "echo Hello from the postStart handler > /usr/share/message"]
 
 lifecycle: {}
-  # preStop:
-  #   exec:
-  #     command: ["/bin/sh", "-c", "echo Hello from the postStart handler > /usr/share/message"]
-  # postStart:
-  #   exec:
-  #     command:
-  #       - bash
-  #       - -c
-  #       - |
-  #         #!/bin/bash
-  #         # Add a template to adjust number of shards/replicas1
-  #         TEMPLATE_NAME=my_template
-  #         INDEX_PATTERN="logstash-*"
-  #         SHARD_COUNT=8
-  #         REPLICA_COUNT=1
-  #         ES_URL=http://localhost:9200
-  #         while [[ "$(curl -s -o /dev/null -w '%{http_code}\n' $ES_URL)" != "200" ]]; do sleep 1; done
-  #         curl -XPUT "$ES_URL/_template/$TEMPLATE_NAME" -H 'Content-Type: application/json' -d'{"index_patterns":['\""$INDEX_PATTERN"\"'],"settings":{"number_of_shards":'$SHARD_COUNT',"number_of_replicas":'$REPLICA_COUNT'}}'
+# preStop:
+#   exec:
+#     command: ["/bin/sh", "-c", "echo Hello from the postStart handler > /usr/share/message"]
+# postStart:
+#   exec:
+#     command:
+#       - bash
+#       - -c
+#       - |
+#         #!/bin/bash
+#         # Add a template to adjust number of shards/replicas1
+#         TEMPLATE_NAME=my_template
+#         INDEX_PATTERN="logstash-*"
+#         SHARD_COUNT=8
+#         REPLICA_COUNT=1
+#         ES_URL=http://localhost:9200
+#         while [[ "$(curl -s -o /dev/null -w '%{http_code}\n' $ES_URL)" != "200" ]]; do sleep 1; done
+#         curl -XPUT "$ES_URL/_template/$TEMPLATE_NAME" -H 'Content-Type: application/json' -d'{"index_patterns":['\""$INDEX_PATTERN"\"'],"settings":{"number_of_shards":'$SHARD_COUNT',"number_of_replicas":'$REPLICA_COUNT'}}'
 
 keystore: []
 # To add secrets to the keystore:
@@ -1169,17 +1126,14 @@ networkPolicy:
 
   http:
     enabled: false
-
 # Deprecated
 # please use the above podSecurityContext.fsGroup instead
 fsGroup: ""
-
 ## Set optimal sysctl's through securityContext. This requires privilege. Can be disabled if
 ## the system has already been preconfigured. (Ex: https://www.elastic.co/guide/en/elasticsearch/reference/current/vm-max-map-count.html)
 ## Also see: https://kubernetes.io/docs/tasks/administer-cluster/sysctl-cluster/
 sysctl:
   enabled: false
-
 ## Set optimal sysctl's through privileged initContainer.
 sysctlInit:
   enabled: false
@@ -1187,40 +1141,37 @@ sysctlInit:
   # image: busybox
   # override image tag, which is latest by default
   # imageTag:
-
 ## Enable to add 3rd Party / Custom plugins not offered in the default OpenSearch image.
 plugins:
   enabled: false
   installList: []
   # - example-fake-plugin
-
 sampleData:
   enabled: false
-
 # -- Array of extra K8s manifests to deploy
 extraObjects: []
-  # - apiVersion: secrets-store.csi.x-k8s.io/v1
-  #   kind: SecretProviderClass
-  #   metadata:
-  #     name: argocd-secrets-store
-  #   spec:
-  #     provider: aws
-  #     parameters:
-  #       objects: |
-  #         - objectName: "argocd"
-  #           objectType: "secretsmanager"
-  #           jmesPath:
-  #               - path: "client_id"
-  #                 objectAlias: "client_id"
-  #               - path: "client_secret"
-  #                 objectAlias: "client_secret"
-  #     secretObjects:
-  #     - data:
-  #       - key: client_id
-  #         objectName: client_id
-  #       - key: client_secret
-  #         objectName: client_secret
-  #       secretName: argocd-secrets-store
-  #       type: Opaque
-  #       labels:
-  #         app.kubernetes.io/part-of: argocd
+# - apiVersion: secrets-store.csi.x-k8s.io/v1
+#   kind: SecretProviderClass
+#   metadata:
+#     name: argocd-secrets-store
+#   spec:
+#     provider: aws
+#     parameters:
+#       objects: |
+#         - objectName: "argocd"
+#           objectType: "secretsmanager"
+#           jmesPath:
+#               - path: "client_id"
+#                 objectAlias: "client_id"
+#               - path: "client_secret"
+#                 objectAlias: "client_secret"
+#     secretObjects:
+#     - data:
+#       - key: client_id
+#         objectName: client_id
+#       - key: client_secret
+#         objectName: client_secret
+#       secretName: argocd-secrets-store
+#       type: Opaque
+#       labels:
+#         app.kubernetes.io/part-of: argocd
