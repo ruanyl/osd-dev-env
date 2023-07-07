@@ -35,7 +35,7 @@ jobs:
   build-opensearch:
     runs-on: ubuntu-latest
     env:
-      PYTHON_VERSION: 3.7
+      PYTHON_VERSION: 3.9
       JDK_VERSION: 14
       TARGET_VERSION: ${{ github.event.inputs.target_version || '2.7.0' }}
       ARCH: ${{ github.event.inputs.architecture || 'x64' }}
