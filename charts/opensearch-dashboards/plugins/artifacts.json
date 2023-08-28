@@ -2,7 +2,7 @@
   "plugins": [
     {
       "name": "mlCommonsDashboards",
-      "url": "https://github.com/wanglam/ml-commons-dashboards/releases/download/2.9-experimental.5998201592/mlCommonsDashboards-2.9.0.zip"
+      "url": "https://github.com/wanglam/ml-commons-dashboards/releases/download/2.9-experimental.5998692860/mlCommonsDashboards-2.9.0.zip"
     }
   ]
 }
