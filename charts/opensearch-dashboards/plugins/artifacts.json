@@ -2,11 +2,7 @@
   "plugins": [
     {
       "name": "mlCommonsDashboards",
-      "url": "https://github.com/wanglam/ml-commons-dashboards/releases/download/2.8-experimental.5318511357/mlCommonsDashboards-2.8.0.zip"
-    },
-    {
-      "name": "text2DSL",
-      "url": "https://github.com/ruanyl/text-to-dsl/releases/download/2.8.0-experimental.5322208245/text2DSL-2.8.0.zip"
+      "url": "https://github.com/wanglam/ml-commons-dashboards/releases/download/2.9-experimental.5997076466/mlCommonsDashboards-2.9.0.zip"
     }
   ]
 }
