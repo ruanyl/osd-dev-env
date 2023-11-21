@@ -1,7 +1,7 @@
 {
   "plugins": [{
     "name": "assistantDashboards",
-    "url": "https://github.com/ruanyl/ml-commons-dev-env/releases/download/assistantDashboards-2.11.0-beta.7/assistantDashboards-2.11.0.zip"
+    "url": "https://github.com/ruanyl/ml-commons-dev-env/releases/download/assistantDashboards-2.11.0-beta.8/assistantDashboards-2.11.0.zip"
   }, {
     "name": "observabilityDashboards",
     "url": "https://github.com/ruanyl/ml-commons-dev-env/releases/download/observabilityDashboards-2.11.0-beta.0/observabilityDashboards-2.11.0.zip"
