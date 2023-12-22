@@ -10,11 +10,11 @@ replicaCount: 1
 global:
   # Set if you want to change the default docker registry, e.g. a private one.
   # dockerRegistry: "public.ecr.aws"
-  dockerRegistry: ""
+  dockerRegistry: "public.ecr.aws"
 image:
-  repository: "opensearchproject/opensearch-dashboards"
+  repository: "r9h9r7k4/opensearch-dashboards-dev"
   # override image tag, which is .Chart.AppVersion by default
-  tag: "2.11.0"
+  tag: "7297106223"
   pullPolicy: "IfNotPresent"
 startupProbe:
   tcpSocket:
