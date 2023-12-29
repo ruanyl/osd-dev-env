@@ -106,7 +106,7 @@ config:
     # Enable multiple datasource
     data_source.enabled: true
     assistant.chat.enabled: true
-    assistant.chat.rootAgentId: "fake_agent"
+    assistant.chat.rootAgentName: "Root agent"
     # workspace.enabled: true
     # Enable ml_commons_dashboards
     # ml_commons_dashboards.enabled: true
