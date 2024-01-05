@@ -1,12 +1,12 @@
 ---
-schema-version: '1.0'
+schema-version: '1.1'
 build:
   name: OpenSearch
   version: 3.0.0
 ci:
   image:
-    name: opensearchstaging/ci-runner:ci-runner-centos7-opensearch-build-v2
-    args: -e JAVA_HOME=/opt/java/openjdk-20
+    name: opensearchstaging/ci-runner:ci-runner-centos7-opensearch-build-v3
+    args: -e JAVA_HOME=/opt/java/openjdk-21
 components:
   - name: OpenSearch
     repository: https://github.com/opensearch-project/OpenSearch.git
@@ -23,15 +23,6 @@ components:
     checks:
       - gradle:publish
       - gradle:properties:version
-  - name: ml-commons
-    repository: https://github.com/opensearch-project/ml-commons.git
-    ref: main
-    platforms:
-      - linux
-      - windows
-    checks:
-      - gradle:properties:version
-      - gradle:dependencies:opensearch.version: opensearch-ml-plugin
   - name: job-scheduler
     repository: https://github.com/opensearch-project/job-scheduler.git
     ref: main
@@ -41,49 +32,14 @@ components:
     checks:
       - gradle:properties:version
       - gradle:dependencies:opensearch.version
-  - name: opensearch-reports
-    repository: https://github.com/opensearch-project/reporting.git
-    ref: main
-    platforms:
-      - linux
-      - windows
-    checks:
-      - gradle:properties:version
-      - gradle:dependencies:opensearch.version
   - name: security
-    repository: https://github.com/opensearch-project/security.git
-    ref: main
-    checks:
-      - gradle:properties:version
-      - gradle:dependencies:opensearch.version
-        #  - name: performance-analyzer
-        #    repository: https://github.com/opensearch-project/performance-analyzer.git
-        #    ref: main
-        #    platforms:
-        #      - linux
-        #    checks:
-        #      - gradle:properties:version
-        #      - gradle:dependencies:opensearch.version
-  - name: opensearch-observability
-    repository: https://github.com/opensearch-project/observability.git
+    repository: https://github.com/ruanyl/security.git
     ref: main
     platforms:
       - linux
       - windows
-    checks:
-      - gradle:properties:version
-      - gradle:dependencies:opensearch.version
   - name: k-NN
     repository: https://github.com/opensearch-project/k-NN.git
-    ref: main
-    platforms:
-      - linux
-      - windows
-    checks:
-      - gradle:properties:version
-      - gradle:dependencies:opensearch.version
-  - name: neural-search
-    repository: https://github.com/opensearch-project/neural-search.git
     ref: main
     platforms:
       - linux
@@ -100,17 +56,26 @@ components:
     checks:
       - gradle:properties:version
       - gradle:dependencies:opensearch.version
-        #   - name: anomaly-detection
-        #     repository: https://github.com/opensearch-project/anomaly-detection.git
-        #     ref: main
-        #     platforms:
-        #       - linux
-        #       - windows
-        #     checks:
-        #       - gradle:properties:version
-        #       - gradle:dependencies:opensearch.version
   - name: cross-cluster-replication
     repository: https://github.com/opensearch-project/cross-cluster-replication.git
+    ref: main
+    platforms:
+      - linux
+      - windows
+    checks:
+      - gradle:properties:version
+      - gradle:dependencies:opensearch.version
+  - name: ml-commons
+    repository: https://github.com/opensearch-project/ml-commons.git
+    ref: main
+    platforms:
+      - linux
+      - windows
+    checks:
+      - gradle:properties:version
+      - gradle:dependencies:opensearch.version: opensearch-ml-plugin
+  - name: neural-search
+    repository: https://github.com/opensearch-project/neural-search.git
     ref: main
     platforms:
       - linux
@@ -138,6 +103,51 @@ components:
     checks:
       - gradle:properties:version
       - gradle:dependencies:opensearch.version: notifications
+  - name: opensearch-observability
+    repository: https://github.com/opensearch-project/observability.git
+    ref: main
+    platforms:
+      - linux
+      - windows
+    checks:
+      - gradle:properties:version
+      - gradle:dependencies:opensearch.version
+  - name: opensearch-reports
+    repository: https://github.com/opensearch-project/reporting.git
+    ref: main
+    platforms:
+      - linux
+      - windows
+    checks:
+      - gradle:properties:version
+      - gradle:dependencies:opensearch.version
+        #- name: sql
+        #  repository: https://github.com/zane-neo/sql.git
+        #  ref: add-publishToMavenLocal
+        #  platforms:
+        #    - linux
+        #    - windows
+        #  checks:
+        #    - gradle:properties:version
+        #    - gradle:dependencies:opensearch.version: opensearch-sql-plugin
+  - name: asynchronous-search
+    repository: https://github.com/opensearch-project/asynchronous-search.git
+    ref: main
+    platforms:
+      - linux
+      - windows
+    checks:
+      - gradle:properties:version
+      - gradle:dependencies:opensearch.version
+        #- name: anomaly-detection
+        #  repository: https://github.com/zane-neo/anomaly-detection.git
+        #  ref: add-publishToMavenLocal
+        #  platforms:
+        #    - linux
+        #    - windows
+        #  checks:
+        #    - gradle:properties:version
+        #    - gradle:dependencies:opensearch.version
   - name: alerting
     repository: https://github.com/opensearch-project/alerting.git
     ref: main
@@ -147,3 +157,54 @@ components:
     checks:
       - gradle:properties:version
       - gradle:dependencies:opensearch.version: alerting
+  - name: security-analytics
+    repository: https://github.com/opensearch-project/security-analytics.git
+    ref: main
+    platforms:
+      - linux
+      - windows
+    checks:
+      - gradle:properties:version
+  - name: index-management
+    repository: https://github.com/opensearch-project/index-management.git
+    ref: main
+    platforms:
+      - linux
+      - windows
+    checks:
+      - gradle:properties:version
+        #- name: performance-analyzer
+        #  repository: https://github.com/opensearch-project/performance-analyzer.git
+        #  ref: main
+        #  platforms:
+        #    - linux
+        #  checks:
+        #    - gradle:properties:version
+        #    - gradle:dependencies:opensearch.version
+  - name: custom-codecs
+    repository: https://github.com/opensearch-project/custom-codecs.git
+    ref: main
+    platforms:
+      - linux
+      - windows
+    checks:
+      - gradle:properties:version
+      - gradle:dependencies:opensearch.version
+        #- name: flow-framework
+        #  repository: https://github.com/gaobinlong/flow-framework.git
+        #  ref: main
+        #  platforms:
+        #    - linux
+        #    - windows
+        #  checks:
+        #    - gradle:properties:version
+        #    - gradle:dependencies:opensearch.version
+        #- name: skills
+        #  repository: https://github.com/opensearch-project/skills.git
+        #  ref: main
+        #  platforms:
+        #    - linux
+        #    - windows
+        #  checks:
+        #    - gradle:properties:version
+        #    - gradle:dependencies:opensearch.version

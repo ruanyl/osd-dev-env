@@ -113,7 +113,7 @@ jobs:
           artifact_name=opensearch-dashboards-${{ env.TARGET_VERSION}}-${{ env.PLATFORM }}-${{ env.ARCH }}.tar.gz
           tarball=$(realpath opensearch-build/tar/dist/opensearch-dashboards/$artifact_name)
           cd ./opensearch-build/docker/release
-          ./build-image-single-arch.sh -v $IMAGE_TAG -p opensearch-dashboards -a ${{ env.ARCH }} -f ./dockerfiles/opensearch-dashboards.al2.dockerfile -t $tarball
+          ./build-image-single-arch.sh -v $IMAGE_TAG -p opensearch-dashboards -a ${{ env.ARCH }} -f ./dockerfiles/opensearch-dashboards.al2023.dockerfile -t $tarball
           docker images
           docker tag opensearchproject/opensearch-dashboards:$IMAGE_TAG $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG
           docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG
@@ -130,7 +130,7 @@ jobs:
           path: opensearch-dev-env
           commit-message: update opensearch-dashboards image
           title: Update opensearch-dashboards image
-          branch: create-pull-request/update-opensearch-dashboards-image
+          branch: create-pull-request/update-workspace-opensearch-dashboards-image
           signoff: true
           delete-branch: true
           add-paths: |
