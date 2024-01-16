@@ -66,8 +66,8 @@ components:
       - gradle:properties:version
       - gradle:dependencies:opensearch.version
   - name: ml-commons
-    repository: https://github.com/zane-neo/ml-commons.git
-    ref: rca_blocking
+    repository: https://github.com/opensearch-project/ml-commons.git
+    ref: main
     platforms:
       - linux
       - windows
