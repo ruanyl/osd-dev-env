@@ -137,7 +137,7 @@ hostAliases: []
 
 serverHost: "0.0.0.0"
 service:
-  type: NodePort
+  type: ClusterIP
   # The IP family and IP families options are to set the behaviour in a dual-stack environment
   # Omitting these values will let the service fall back to whatever the CNI dictates the defaults
   # should be
@@ -159,13 +159,12 @@ ingress:
   ingressClassName: alb
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}, {"HTTP": 80}]'
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
     alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/ssl-redirect: '443'
+    # alb.ingress.kubernetes.io/ssl-redirect: '443'
   labels: {}
   hosts:
-    - host: ollye2e.ruanyl.people.aws.dev
-      paths:
+    - paths:
         - path: /
           backend: {}
 resources:
