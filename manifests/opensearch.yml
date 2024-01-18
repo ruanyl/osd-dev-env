@@ -191,8 +191,8 @@ components:
         #     - gradle:properties:version
         #     - gradle:dependencies:opensearch.version
   - name: flow-framework
-    repository: https://github.com/zane-neo/flow-framework.git
-    ref: fix-hang
+    repository: https://github.com/opensearch-project/flow-framework.git
+    ref: main
     platforms:
       - linux
       - windows
