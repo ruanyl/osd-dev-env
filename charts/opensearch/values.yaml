@@ -15,7 +15,7 @@ roles:
   - ingest
   - data
   - remote_cluster_client
-replicas: 3
+replicas: 2
 # if not set, falls back to parsing .Values.imageTag, then .Chart.appVersion.
 majorVersion: "7"
 global:
@@ -124,11 +124,11 @@ podAnnotations: {}
 
 # additionals labels
 labels: {}
-opensearchJavaOpts: "-Xmx12G -Xms12G"
+opensearchJavaOpts: "-Xmx4G -Xms4G"
 resources:
   requests:
-    cpu: "4"
-    memory: "24Gi"
+    cpu: "2"
+    memory: "8Gi"
 initResources: {}
 #  limits:
 #     cpu: "25m"

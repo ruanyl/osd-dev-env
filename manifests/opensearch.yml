@@ -190,21 +190,21 @@ components:
         #   checks:
         #     - gradle:properties:version
         #     - gradle:dependencies:opensearch.version
-  - name: flow-framework
-    repository: https://github.com/zane-neo/flow-framework.git
-    ref: fix-hang
-    platforms:
-      - linux
-      - windows
-    checks:
-      - gradle:properties:version
-      - gradle:dependencies:opensearch.version
-  - name: skills
-    repository: https://github.com/opensearch-project/skills.git
-    ref: main
-    platforms:
-      - linux
-      - windows
-    checks:
-      - gradle:properties:version
-      - gradle:dependencies:opensearch.version
+        # - name: flow-framework
+        #   repository: https://github.com/opensearch-project/flow-framework.git
+        #   ref: main
+        #   platforms:
+        #     - linux
+        #     - windows
+        #   checks:
+        #     - gradle:properties:version
+        #     - gradle:dependencies:opensearch.version
+        # - name: skills
+        #   repository: https://github.com/opensearch-project/skills.git
+        #   ref: main
+        #   platforms:
+        #     - linux
+        #     - windows
+        #   checks:
+        #     - gradle:properties:version
+        #     - gradle:dependencies:opensearch.version
