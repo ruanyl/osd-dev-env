@@ -34,7 +34,7 @@ components:
       - gradle:dependencies:opensearch.version
   - name: security
     repository: https://github.com/ruanyl/security.git
-    ref: 921ff0253f5694c41d0640c5c7e5abdc7a3be6b2
+    ref: main
     platforms:
       - linux
       - windows
