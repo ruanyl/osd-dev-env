@@ -96,9 +96,9 @@ config:
 # syntax here
 extraEnvs:
   - name: DISABLE_INSTALL_DEMO_CONFIG
-    value: "false"
-  - name: OPENSEARCH_INITIAL_ADMIN_PASSWORD
-    value: "<secret:/app/data/demo/internal_users~admin>"
+    value: "true"
+      #- name: OPENSEARCH_INITIAL_ADMIN_PASSWORD
+      #  value: "<secret:/app/data/demo/internal_users~admin>"
 # Allows you to load environment variables from kubernetes secret or config map
 envFrom: []
 # - secretRef:
