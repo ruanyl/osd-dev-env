@@ -90,7 +90,6 @@ config:
               ".opendistro-asynchronous-search-response*",
             ]
     ######## End OpenSearch Security Demo Configuration ########
-
   # demo certificates from security demo config
   # src/main/java/org/opensearch/security/tools/democonfig/Certificates.java
   esnode.pem: |
@@ -119,7 +118,6 @@ config:
     vtZutc81TQnzBtkS9XuulovDE0qI+jQrKkKu8xgGLhgH0zxnPkKtUg2I3Aq6zl1L
     zYkEOUF8Y25J6WeY88Yfnc0iigI+Pnz5NK8R9GL7TYo=
     -----END CERTIFICATE-----
-
   esnode-key.pem: |
     -----BEGIN PRIVATE KEY-----
     MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCm93kXteDQHMAv
@@ -149,7 +147,6 @@ config:
     +x7Nmybp7PmpEBECr3deoZKQ/acNHn0iwb0It+YqV5+TquQebqgwK6WCLsMuiYKT
     bg/ch9Rhxbq22yrVgWHh6epp
     -----END PRIVATE KEY-----
-
   kirk.pem: |
     -----BEGIN CERTIFICATE-----
     MIIEmDCCA4CgAwIBAgIUZjrlDPP8azRDPZchA/XEsx0X2iYwDQYJKoZIhvcNAQEL
@@ -178,7 +175,6 @@ config:
     h9Dqprr+ukYmjho76g6k5cQuRaB6MxqldzUg+2E7IHQP8MCF+co51uZq2nl33mtp
     RGr6JbdHXc96zsLTL3saJQ8AWEfu1gbTVrwyRA==
     -----END CERTIFICATE-----
-
   kirk-key.pem: |
     -----BEGIN PRIVATE KEY-----
     MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCVXDgEJQorgfXp
@@ -208,7 +204,6 @@ config:
     F7oILW5kXxhb8S73GWcuMbuQMFVHFONbZAZgn+C9FW4l7XyRdkrbR1MRZ2km8YMs
     /AHmo368d4PSNRMMzLHw8Q==
     -----END PRIVATE KEY-----
-
   root-ca.pem: |
     -----BEGIN CERTIFICATE-----
     MIIExjCCA66gAwIBAgIUd+SvPvzan5P2TQbEZ4zj4Gt6FYowDQYJKoZIhvcNAQEL
@@ -245,8 +240,8 @@ config:
 extraEnvs:
   - name: DISABLE_INSTALL_DEMO_CONFIG
     value: "true"
-      #- name: OPENSEARCH_INITIAL_ADMIN_PASSWORD
-      #  value: "<secret:/app/data/demo/internal_users~admin>"
+    #- name: OPENSEARCH_INITIAL_ADMIN_PASSWORD
+    #  value: "<secret:/app/data/demo/internal_users~admin>"
 # Allows you to load environment variables from kubernetes secret or config map
 envFrom: []
 # - secretRef:
@@ -267,7 +262,7 @@ hostAliases: []
 image:
   repository: "r9h9r7k4/opensearch-dev"
   # override image tag, which is .Chart.AppVersion by default
-  tag: "7624523712"
+  tag: "7626732653"
   pullPolicy: "IfNotPresent"
 podAnnotations: {}
 # iam.amazonaws.com/role: es-cluster
