@@ -14,7 +14,7 @@ global:
 image:
   repository: "r9h9r7k4/opensearch-dashboards-dev"
   # override image tag, which is .Chart.AppVersion by default
-  tag: "7622457995"
+  tag: "7578432083"
   pullPolicy: "IfNotPresent"
 startupProbe:
   tcpSocket:
@@ -159,12 +159,13 @@ ingress:
   ingressClassName: alb
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}, {"HTTP": 80}]'
     alb.ingress.kubernetes.io/target-type: ip
-    # alb.ingress.kubernetes.io/ssl-redirect: '443'
+    alb.ingress.kubernetes.io/ssl-redirect: '443'
   labels: {}
   hosts:
-    - paths:
+    - host: ollye2e.ruanyl.people.aws.dev
+      paths:
         - path: /
           backend: {}
 resources:
