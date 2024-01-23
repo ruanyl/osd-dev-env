@@ -78,15 +78,15 @@ ENV PATH=$PATH:$JAVA_HOME/bin:$OPENSEARCH_HOME/bin
 # Add k-NN lib directory to library loading path variable
 ENV LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$OPENSEARCH_HOME/plugins/opensearch-knn/lib"
 
-# Change user
-USER $UID
-
 # Setup OpenSearch
 # Disable security demo installation during image build, and allow user to disable during startup of the container
 # Enable security plugin during image build, and allow user to disable during startup of the container
 ARG DISABLE_INSTALL_DEMO_CONFIG=true
 ARG DISABLE_SECURITY_PLUGIN=false
 RUN ./opensearch-onetime-setup.sh
+
+# Change user
+USER $UID
 
 # Expose ports for the opensearch service (9200 for HTTP and 9300 for internal transport) and performance analyzer (9600 for the agent and 9650 for the root cause analysis component)
 EXPOSE 9200 9300 9600 9650
