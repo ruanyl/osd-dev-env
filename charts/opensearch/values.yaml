@@ -683,6 +683,24 @@ securityConfig:
         security_rest_api_access:
           reserved: true
 
+        assistant_user:
+          reserved: true
+          cluster_permissions:
+            - 'cluster:admin/opensearch/ml/execute'
+            - 'cluster:admin/opensearch/ml/predict'
+            - 'cluster:admin/opensearch/ml/memory/conversation/create'
+            - 'cluster:admin/opensearch/ml/memory/conversation/delete'
+            - 'cluster:admin/opensearch/ml/memory/conversation/get'
+            - 'cluster:admin/opensearch/ml/memory/conversation/list'
+            - 'cluster:admin/opensearch/ml/memory/conversation/search'
+            - 'cluster:admin/opensearch/ml/memory/conversation/update'
+            - 'cluster:admin/opensearch/ml/memory/conversation/interaction/search'
+            - 'cluster:admin/opensearch/ml/memory/interaction/create'
+            - 'cluster:admin/opensearch/ml/memory/interaction/get'
+            - 'cluster:admin/opensearch/ml/memory/interaction/list'
+            - 'cluster:admin/opensearch/ml/memory/interaction/update'
+            - 'cluster:admin/opensearch/ml/memory/trace/get'
+
         # Allows users to view monitors, destinations and alerts
         alerting_read_access:
           reserved: true
