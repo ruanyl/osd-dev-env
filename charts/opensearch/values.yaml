@@ -688,6 +688,7 @@ securityConfig:
           cluster_permissions:
             - 'cluster:admin/opensearch/ml/execute'
             - 'cluster:admin/opensearch/ml/predict'
+            - 'cluster:admin/opensearch/ml/agents/search'
             - 'cluster:admin/opensearch/ml/memory/conversation/create'
             - 'cluster:admin/opensearch/ml/memory/conversation/delete'
             - 'cluster:admin/opensearch/ml/memory/conversation/get'
