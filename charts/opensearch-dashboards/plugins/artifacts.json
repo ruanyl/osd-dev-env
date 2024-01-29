@@ -1,8 +1,3 @@
 {
-  "plugins": [
-    {
-      "name": "assistantDashboards",
-      "url": "https://github.com/opensearch-project/index-management-dashboards-plugin/files/14081247/assistantDashboards-3.0.0.zip"
-    }
-  ]
+  "plugins": []
 }
