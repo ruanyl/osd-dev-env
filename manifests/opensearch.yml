@@ -56,15 +56,15 @@ components:
     checks:
       - gradle:properties:version
       - gradle:dependencies:opensearch.version
-  - name: cross-cluster-replication
-    repository: https://github.com/opensearch-project/cross-cluster-replication.git
-    ref: main
-    platforms:
-      - linux
-      - windows
-    checks:
-      - gradle:properties:version
-      - gradle:dependencies:opensearch.version
+        # - name: cross-cluster-replication
+        #   repository: https://github.com/opensearch-project/cross-cluster-replication.git
+        #   ref: main
+        #   platforms:
+        #     - linux
+        #     - windows
+        #   checks:
+        #     - gradle:properties:version
+        #     - gradle:dependencies:opensearch.version
   - name: ml-commons
     repository: https://github.com/opensearch-project/ml-commons.git
     ref: 991193c8c2474cf5669c9bf7d68eae5b8b3029b6
