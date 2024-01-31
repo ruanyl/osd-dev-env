@@ -1,8 +1,3 @@
 {
-  "plugins": [
-    {
-      "name": "opensearch-flow-framework",
-      "url": "https://github.com/ruanyl/ml-commons-dev-env/releases/download/opensearch-flow-framework-3.0.0.0-SNAPSHOT.1/opensearch-flow-framework-3.0.0.0-SNAPSHOT.zip"
-    }
-  ]
+  "plugins": []
 }
