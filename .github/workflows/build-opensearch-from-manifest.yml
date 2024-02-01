@@ -53,9 +53,10 @@ jobs:
       TARGET_VERSION: ${{ github.event.inputs.snapshot && format('{0}-SNAPSHOT', github.event.inputs.target_version) || github.event.inputs.target_version }}
       ARCH: ${{ github.event.inputs.architecture || 'x64' }}
       PLATFORM: ${{ github.event.inputs.platform || 'linux' }}
-      AWS_REGION: ${{ github.event.inputs.aws_region }}
-      ECR_REGISTRY_ALIAS: ${{ github.event.inputs.ecr_registry_alias }}
-      ECR_REPOSITORY: ${{ github.event.inputs.ecr_repository }}
+      AWS_REGION: ${{ github.event.inputs.aws_region || 'us-east-1' }}
+      ECR_REGISTRY_ALIAS: ${{ github.event.inputs.ecr_registry_alias || 'us-east-1' }}
+      ECR_REPOSITORY: ${{ github.event.inputs.ecr_repository || 'us-east-1' }}
+      SNAPSHOT: ${{ github.event.inputs.snapshot || true }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -106,7 +107,7 @@ jobs:
         if: env.should_run_workflow == 'true'
         run: |
           cd opensearch-build
-          ./build.sh ../opensearch-dev-env/manifests/opensearch.yml --architecture ${{ env.ARCH }} --platform ${{ env.PLATFORM }} ${{ github.event.inputs.snapshot && '--snapshot' }}
+          ./build.sh ../opensearch-dev-env/manifests/opensearch.yml --architecture ${{ env.ARCH }} --platform ${{ env.PLATFORM }} ${{ env.SNAPSHOT && '--snapshot' }}
           ./assemble.sh tar/builds/opensearch/manifest.yml
       - name: Build and push docker image
         if: env.should_run_workflow == 'true'
