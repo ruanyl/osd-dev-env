@@ -67,7 +67,7 @@ components:
         #     - gradle:dependencies:opensearch.version
   - name: ml-commons
     repository: https://github.com/opensearch-project/ml-commons.git
-    ref: 991193c8c2474cf5669c9bf7d68eae5b8b3029b6
+    ref: main
     platforms:
       - linux
       - windows
