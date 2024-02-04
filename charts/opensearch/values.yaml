@@ -52,6 +52,8 @@ config:
     # Start OpenSearch Security Demo Configuration
     # WARNING: revise all the lines below before you go into production
     plugins:
+      ml_commons:
+        agent_framework_enabled: true
       security:
         ssl:
           transport:
