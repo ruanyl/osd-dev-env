@@ -199,12 +199,12 @@ components:
     checks:
       - gradle:properties:version
       - gradle:dependencies:opensearch.version
-  - name: skills
-    repository: https://github.com/opensearch-project/skills.git
-    ref: main
-    platforms:
-      - linux
-      - windows
-    checks:
-      - gradle:properties:version
-      - gradle:dependencies:opensearch.version
+        #- name: skills
+        #  repository: https://github.com/opensearch-project/skills.git
+        #  ref: main
+        #  platforms:
+        #    - linux
+        #    - windows
+        #  checks:
+        #    - gradle:properties:version
+        #    - gradle:dependencies:opensearch.version
