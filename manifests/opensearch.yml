@@ -122,8 +122,8 @@ components:
       - gradle:properties:version
       - gradle:dependencies:opensearch.version
   - name: sql
-    repository: https://github.com/zane-neo/sql.git
-    ref: add-publishToMavenLocal
+    repository: https://github.com/opensearch-project/sql.git
+    ref: main
     platforms:
       - linux
       - windows
