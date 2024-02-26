@@ -44,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PYTHON_VERSION: '3.9'
-      NODE_VERSION: ${{ github.event.inputs.node_version || '18.16.0' }}
+      NODE_VERSION: ${{ github.event.inputs.node_version || '18.19.0' }}
       TARGET_VERSION: ${{ github.event.inputs.target_version || '3.0.0' }}
       ARCH: ${{ github.event.inputs.architecture || 'x64' }}
       PLATFORM: ${{ github.event.inputs.platform || 'linux' }}
