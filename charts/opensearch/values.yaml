@@ -260,7 +260,7 @@ hostAliases: []
 image:
   repository: "r9h9r7k4/opensearch-dev"
   # override image tag, which is .Chart.AppVersion by default
-  tag: "5374121196"
+  tag: "8044800373"
   pullPolicy: "IfNotPresent"
 podAnnotations: {}
 # iam.amazonaws.com/role: es-cluster
