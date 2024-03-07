@@ -54,5 +54,5 @@ components:
     repository: https://github.com/opensearch-project/dashboards-search-relevance.git
     ref: main
   - name: assistantDashboards
-    repository: https://github.com/raintygao/dashboards-assistant.git
-    ref: feat-sidecar
+    repository: https://github.com/opensearch-project/dashboards-assistant.git
+    ref: main
