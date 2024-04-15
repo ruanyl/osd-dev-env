@@ -9,7 +9,7 @@ ci:
 components:
   - name: OpenSearch-Dashboards
     repository: https://github.com/raintygao/OpenSearch-Dashboards.git
-    ref: feat-sidecar
+    ref: feat-right-navigation
   - name: functionalTestDashboards
     repository: https://github.com/opensearch-project/opensearch-dashboards-functional-test.git
     ref: main
@@ -48,11 +48,11 @@ components:
     repository: https://github.com/opensearch-project/security-analytics-dashboards-plugin.git
     ref: main
   - name: securityDashboards
-    repository: https://github.com/ruanyl/security-dashboards-plugin.git
-    ref: fix-can-not-find-module
+    repository: https://github.com/opensearch-project/security-dashboards-plugin.git
+    ref: main
   - name: searchRelevanceDashboards
     repository: https://github.com/opensearch-project/dashboards-search-relevance.git
     ref: main
   - name: assistantDashboards
-    repository: https://github.com/raintygao/dashboards-assistant.git
-    ref: feat-sidecar
+    repository: https://github.com/opensearch-project/dashboards-assistant.git
+    ref: main
