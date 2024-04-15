@@ -19,10 +19,10 @@ components:
   - name: reportsDashboards
     repository: https://github.com/opensearch-project/dashboards-reporting.git
     ref: main
-  - name: ganttChartDashboards
-    repository: https://github.com/opensearch-project/dashboards-visualizations.git
-    working_directory: gantt-chart
-    ref: main
+      # - name: ganttChartDashboards
+      #   repository: https://github.com/opensearch-project/dashboards-visualizations.git
+      #   working_directory: gantt-chart
+      #   ref: main
   - name: queryWorkbenchDashboards
     repository: https://github.com/opensearch-project/dashboards-query-workbench.git
     ref: main
