@@ -53,6 +53,6 @@ components:
   - name: searchRelevanceDashboards
     repository: https://github.com/opensearch-project/dashboards-search-relevance.git
     ref: main
-  - name: assistantDashboards
-    repository: https://github.com/opensearch-project/dashboards-assistant.git
-    ref: main
+      # - name: assistantDashboards
+      #   repository: https://github.com/opensearch-project/dashboards-assistant.git
+      #   ref: main
