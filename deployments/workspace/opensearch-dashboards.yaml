@@ -1,18 +1,14 @@
 replicaCount: 1
-
 global:
   dockerRegistry: "public.ecr.aws"
-
 image:
   repository: "r9h9r7k4/opensearch-dashboards-dev"
-  tag: "8044665575"
-
+  tag: "8781632734"
 config:
   # Default OpenSearch Dashboards configuration from docker image of Dashboards
   opensearch_dashboards.yml:
     workspace.enabled: true
     savedObjects.permission.enabled: true
-
 ingress:
   annotations:
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
