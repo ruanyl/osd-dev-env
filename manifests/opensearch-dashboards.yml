@@ -38,9 +38,9 @@ components:
   - name: indexManagementDashboards
     repository: https://github.com/opensearch-project/index-management-dashboards-plugin.git
     ref: main
-  - name: notificationsDashboards
-    repository: https://github.com/opensearch-project/dashboards-notifications.git
-    ref: main
+      # - name: notificationsDashboards
+      #   repository: https://github.com/opensearch-project/dashboards-notifications.git
+      #   ref: main
   - name: alertingDashboards
     repository: https://github.com/opensearch-project/alerting-dashboards-plugin.git
     ref: main
