@@ -10,11 +10,11 @@ replicaCount: 1
 global:
   # Set if you want to change the default docker registry, e.g. a private one.
   # dockerRegistry: "public.ecr.aws"
-  dockerRegistry: ""
+  dockerRegistry: "public.ecr.aws"
 image:
-  repository: "opensearchproject/opensearch-dashboards"
+  repository: "r9h9r7k4/opensearch-dashboards-dev"
   # override image tag, which is .Chart.AppVersion by default
-  tag: ""
+  tag: "8778710391"
   pullPolicy: "IfNotPresent"
 startupProbe:
   tcpSocket:
@@ -155,7 +155,7 @@ ingress:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
     alb.ingress.kubernetes.io/target-type: ip
-      # alb.ingress.kubernetes.io/ssl-redirect: '443'
+    # alb.ingress.kubernetes.io/ssl-redirect: '443'
   labels: {}
   hosts:
     - paths:
