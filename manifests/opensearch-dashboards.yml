@@ -40,7 +40,7 @@ components:
     ref: main
   - name: notificationsDashboards
     repository: https://github.com/opensearch-project/dashboards-notifications.git
-    ref: main
+    ref: 7ed9bacd0192a530dc4844c3315d8cbe16955ebc
   - name: alertingDashboards
     repository: https://github.com/opensearch-project/alerting-dashboards-plugin.git
     ref: main
