@@ -3,7 +3,7 @@ global:
   dockerRegistry: "public.ecr.aws"
 image:
   repository: "r9h9r7k4/opensearch-dashboards-dev"
-  tag: "8781632734"
+  tag: "8798367491"
 config:
   # Default OpenSearch Dashboards configuration from docker image of Dashboards
   opensearch_dashboards.yml:
