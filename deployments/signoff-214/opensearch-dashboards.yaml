@@ -1,17 +1,16 @@
 replicaCount: 1
-
 image:
-  repository: "opensearchproject/opensearch-dashboards"
-  tag: "2.14.0"
-
+  repository: "r9h9r7k4/opensearch-dashboards-dev"
+  tag: "9124588664"
 config:
   # Default OpenSearch Dashboards configuration from docker image of Dashboards
   opensearch_dashboards.yml:
     workspace.enabled: true
     savedObjects.permission.enabled: true
-
 extraEnvs:
   - name: ACCESS_KEY_ID
     value: <secret:/app/data/demo/aws_access~ACCESS_KEY_ID>
   - name: SECRET_ACCESS_KEY
     value: <secret:/app/data/demo/aws_access~SECRET_ACCESS_KEY>
+global:
+  dockerRegistry: public.ecr.aws
