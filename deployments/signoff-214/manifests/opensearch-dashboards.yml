@@ -41,8 +41,8 @@ components:
     repository: https://github.com/opensearch-project/dashboards-notifications.git
     ref: 0ca301f8630f42f4eec53b15e0a8eda9fae91203
   - name: alertingDashboards
-    repository: https://github.com/opensearch-project/alerting-dashboards-plugin.git
-    ref: 150280dd766c0f45ad3e489aecfcab295f82ad60
+    repository: https://github.com/Hailong-am/alerting-dashboards-plugin.git
+    ref: context_aware_214
   - name: securityAnalyticsDashboards
     repository: https://github.com/opensearch-project/security-analytics-dashboards-plugin.git
     ref: e7f946de234cd304d871525eb0ecb14a5513547b
@@ -53,5 +53,5 @@ components:
     repository: https://github.com/opensearch-project/dashboards-search-relevance.git
     ref: a93f20b1a336f15034412777e69409504caecb94
   - name: assistantDashboards
-    repository: https://github.com/opensearch-project/dashboards-assistant.git
-    ref: 1a02edfa6187bd981dce93d3f1f7211c46a029a4
+    repository: https://github.com/Hailong-am/dashboards-assistant.git
+    ref: context_aware_214
