@@ -7,6 +7,8 @@ config:
   opensearch_dashboards.yml:
     workspace.enabled: true
     savedObjects.permission.enabled: true
+    assistant.chat.enabled: true
+    observability.query_assist.enabled: true
 global:
   dockerRegistry: public.ecr.aws
 ingress:
