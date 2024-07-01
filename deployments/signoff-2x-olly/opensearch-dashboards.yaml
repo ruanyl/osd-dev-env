@@ -1,8 +1,0 @@
-replicaCount: 1
-image:
-  repository: 'opensearchstaging/opensearch-dashboards'
-  tag: '2.15.0'
-config:
-  # Default OpenSearch Dashboards configuration from docker image of Dashboards
-  opensearch_dashboards.yml:
-    assistant.chat.enabled: true
