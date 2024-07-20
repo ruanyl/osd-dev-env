@@ -1,9 +1,11 @@
 replicaCount: 1
 image:
-  repository: "opensearchstaging/opensearch-dashboards"
-  tag: "3.0.0"
+  repository: "r9h9r7k4/opensearch-dashboards-dev"
+  tag: "10019245558"
 config:
   # Default OpenSearch Dashboards configuration from docker image of Dashboards
   opensearch_dashboards.yml:
     workspace.enabled: true
     savedObjects.permission.enabled: true
+global:
+  dockerRegistry: public.ecr.aws
