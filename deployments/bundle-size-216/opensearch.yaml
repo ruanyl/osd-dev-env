@@ -1,5 +1,0 @@
-replicas: 2
-
-image:
-  repository: "opensearchproject/opensearch"
-  tag: "2.16.0"

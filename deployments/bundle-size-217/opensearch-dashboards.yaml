@@ -1,4 +1,0 @@
-replicaCount: 1
-image:
-  repository: "opensearchproject/opensearch-dashboards"
-  tag: "2.17.0"
