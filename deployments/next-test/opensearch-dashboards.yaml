@@ -2,3 +2,12 @@ replicaCount: 1
 image:
   repository: "opensearchproject/opensearch-dashboards"
   tag: "2.14.0"
+ingress:
+  annotations:
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/ssl-redirect: '443'
+  hosts:
+    - host: nexttest.ruanyl.people.aws.dev
+      paths:
+        - path: /
+          backend: {}
