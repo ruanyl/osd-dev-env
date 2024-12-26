@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
-  repository: "opensearchstaging/opensearch-dashboards"
-  tag: "2.19.0"
+  repository: "r9h9r7k4/opensearch-dashboards-dev"
+  tag: "12499621259"
   pullPolicy: "Always"
 config:
   # Default OpenSearch Dashboards configuration from docker image of Dashboards
@@ -20,3 +20,5 @@ config:
     uiSettings:
       overrides:
         "home:useNewHomePage": true
+global:
+  dockerRegistry: public.ecr.aws
