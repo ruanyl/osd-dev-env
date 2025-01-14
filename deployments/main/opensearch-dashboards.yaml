@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: "r9h9r7k4/opensearch-dashboards-dev"
-  tag: "12130434930"
+  tag: "12760987784"
 config:
   # Default OpenSearch Dashboards configuration from docker image of Dashboards
   opensearch_dashboards.yml:
@@ -31,7 +31,6 @@ ingress:
           backend: {}
 global:
   dockerRegistry: public.ecr.aws
-
 plugins:
   enabled: true
   removeList:
