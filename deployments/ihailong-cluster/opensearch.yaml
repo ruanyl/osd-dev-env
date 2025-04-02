@@ -1,0 +1,21 @@
+replicas: 2
+
+image:
+  repository: "opensearchstaging/opensearch"
+  tag: "3.0.0"
+  pullPolicy: "Always"
+
+securityConfig:
+  config:
+    data:
+      whitelist.yml: |
+        _meta:
+          type: "whitelist"
+          config_version: 2
+        config:
+          enabled: false
+          requests:
+            /_cluster/settings:
+              - GET
+            /_cat/nodes:
+              - GET
