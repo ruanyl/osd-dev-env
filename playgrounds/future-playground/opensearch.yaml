@@ -11,37 +11,6 @@ resources:
     cpu: "4"
     memory: "8Gi"
 
-# such as opensearch.yml
-config:
-  opensearch.yml:
-    # reindex.remote.whitelist: "k8s-mlplaygr-opensear-c9ea7f8e08-2016635038.us-east-1.elb.amazonaws.com:80"
-    plugins:
-      security:
-        system_indices:
-          enabled: true
-          indices:
-            [
-              ".plugins-ml-config",
-              ".plugins-ml-connector",
-              ".plugins-ml-model-group",
-              ".plugins-ml-model",
-              ".plugins-ml-task",
-              ".opendistro-alerting-config",
-              ".opendistro-alerting-alert*",
-              ".opendistro-anomaly-results*",
-              ".opendistro-anomaly-detector*",
-              ".opendistro-anomaly-checkpoints",
-              ".opendistro-anomaly-detection-state",
-              ".opendistro-reports-*",
-              ".opensearch-notifications-*",
-              ".opensearch-notebooks",
-              ".opensearch-observability",
-              ".ql-datasources",
-              ".opendistro-asynchronous-search-response*",
-              ".replication-metadata-store",
-              ".opensearch-knn-models",
-            ]
-
 securityConfig:
   enabled: true
   path: "/usr/share/opensearch/config/opensearch-security"
