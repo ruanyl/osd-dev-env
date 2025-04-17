@@ -1,39 +1,12 @@
 replicaCount: 1
-
 image:
   repository: "r9h9r7k4/opensearch-dashboards-dev"
-  tag: "14460289426"
-
+  tag: "14506705379"
 config:
   # Default OpenSearch Dashboards configuration from docker image of Dashboards
   opensearch_dashboards.yml:
     opensearch_security.auth.anonymous_auth_enabled: true
-
-    data_source.endpointDeniedIPs: [
-      '127.0.0.0/8',
-      '::1/128',
-      '169.254.0.0/16',
-      'fe80::/10',
-      '10.0.0.0/8',
-      '172.16.0.0/12',
-      '192.168.0.0/16',
-      'fc00::/7',
-      '0.0.0.0/8',
-      '100.64.0.0/10',
-      '192.0.0.0/24',
-      '192.0.2.0/24',
-      '198.18.0.0/15',
-      '192.88.99.0/24',
-      '198.51.100.0/24',
-      '203.0.113.0/24',
-      '224.0.0.0/4',
-      '240.0.0.0/4',
-      '255.255.255.255/32',
-      '::/128',
-      '2001:db8::/32',
-      'ff00::/8',
-    ]
-
+    data_source.endpointDeniedIPs: ['127.0.0.0/8', '::1/128', '169.254.0.0/16', 'fe80::/10', '10.0.0.0/8', '172.16.0.0/12', '192.168.0.0/16', 'fc00::/7', '0.0.0.0/8', '100.64.0.0/10', '192.0.0.0/24', '192.0.2.0/24', '198.18.0.0/15', '192.88.99.0/24', '198.51.100.0/24', '203.0.113.0/24', '224.0.0.0/4', '240.0.0.0/4', '255.255.255.255/32', '::/128', '2001:db8::/32', 'ff00::/8']
     #google_analytics_plugin.trackingID: "G-FHME9YRQ5K"
 
     # security plugin for openid
@@ -51,14 +24,13 @@ config:
     # opensearch_security.openid.client_id: 1020416730351-3f201486nqr0ev9u232jptt7is8e56n9.apps.googleusercontent.com
     # opensearch_security.openid.client_secret: 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
     # opensearch_security.openid.logout_url: "http://k8s-futurepl-opensear-e45b455752-916128521.us-east-1.elb.amazonaws.com"
-    
+
     # workspace
     workspace.enabled: true
     savedObjects.permission.enabled: true
     opensearchDashboards.dashboardAdmin.users: ["admin", "test1"]
     assistant.chat.enabled: false
     opensearch.ignoreVersionMismatch: true
-
     uiSettings:
       overrides:
         "query:enhancements:enabled": true
@@ -67,15 +39,12 @@ config:
         "home:useNewHomePage": true
         # "theme:darkMode": true
         # "theme:next": true
-
     # Olly2
     queryEnhancements.queryAssist.summary.enabled: true
     assistant.smartAnomalyDetector.enabled: true
     assistant.alertInsight.enabled: true
     assistant.text2viz.enabled: true
-
     # Flow Framework
     flowFrameworkDashboards.enabled: true
-
 global:
   dockerRegistry: public.ecr.aws
