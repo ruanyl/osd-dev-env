@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
-  repository: "opensearchstaging/opensearch-dashboards"
-  tag: "3.0.0-beta1"
+  repository: "r9h9r7k4/opensearch-dashboards-dev"
+  tag: "14704574598"
 config:
   # Default OpenSearch Dashboards configuration from docker image of Dashboards
   opensearch_dashboards.yml:
@@ -26,3 +26,5 @@ plugins:
     - assistantDashboards
   installList:
     - https://github.com/ruanyl/osd-dev-env/releases/download/bundle-optimize-fix.0/assistantDashboards-3.0.0.zip
+global:
+  dockerRegistry: public.ecr.aws
