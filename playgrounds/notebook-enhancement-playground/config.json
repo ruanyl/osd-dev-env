@@ -1,6 +1,6 @@
 {
   "owner": "suzhou@amazon.com",
   "cluster": {
-    "name": "notebook-enhancement-playground"
+    "name": "opensearch-dev"
   }
 }
