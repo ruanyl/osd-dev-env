@@ -1,13 +1,11 @@
 replicaCount: 1
-
 image:
   repository: "r9h9r7k4/opensearch-dashboards-dev"
-  tag: "14460289426"
-
+  tag: "14961188353"
 config:
   # Default OpenSearch Dashboards configuration from docker image of Dashboards
   opensearch_dashboards.yml:
-    opensearch.hosts: [https://localhost:9200]
+    opensearch.hosts: ['https://localhost:9200']
     opensearch.ssl.verificationMode: none
     opensearch.username: kibanaserver
     opensearch.password: <secret:/app/data/demo/internal_users~kibanaserver>
@@ -23,39 +21,16 @@ config:
     opensearchDashboards.branding.useExpandedHeader: false
     # Enable multiple datasource
     data_source.enabled: true
-    data_source.endpointDeniedIPs: [
-      '127.0.0.0/8',
-      '::1/128',
-      '169.254.0.0/16',
-      'fe80::/10',
-      '10.0.0.0/8',
-      '172.16.0.0/12',
-      '192.168.0.0/16',
-      'fc00::/7',
-      '0.0.0.0/8',
-      '100.64.0.0/10',
-      '192.0.0.0/24',
-      '192.0.2.0/24',
-      '198.18.0.0/15',
-      '192.88.99.0/24',
-      '198.51.100.0/24',
-      '203.0.113.0/24',
-      '224.0.0.0/4',
-      '240.0.0.0/4',
-      '255.255.255.255/32',
-      '::/128',
-      '2001:db8::/32',
-      'ff00::/8',
-    ]
+    data_source.endpointDeniedIPs: ['127.0.0.0/8', '::1/128', '169.254.0.0/16', 'fe80::/10', '10.0.0.0/8', '172.16.0.0/12', '192.168.0.0/16', 'fc00::/7', '0.0.0.0/8', '100.64.0.0/10', '192.0.0.0/24', '192.0.2.0/24', '198.18.0.0/15', '192.88.99.0/24', '198.51.100.0/24', '203.0.113.0/24', '224.0.0.0/4', '240.0.0.0/4', '255.255.255.255/32', '::/128', '2001:db8::/32', 'ff00::/8']
     # Enable ml_commons_dashboards
     # ml_commons_dashboards.enabled: true
     # Content security policy(csp) settings
-    csp.rules: [ "connect-src 'self' www.google-analytics.com vectors.maps.opensearch.org tiles.maps.opensearch.org maps.opensearch.org;" ]
+    csp.rules: ["connect-src 'self' www.google-analytics.com vectors.maps.opensearch.org tiles.maps.opensearch.org maps.opensearch.org;"]
     csp.warnLegacyBrowsers: false
     #google_analytics_plugin.trackingID: "G-FHME9YRQ5K"
 
     # security plugin for openid
-    opensearch_security.auth.type: ['Basicauth','openid']
+    opensearch_security.auth.type: ['Basicauth', 'openid']
     opensearch_security.auth.multiple_auth_enabled: true
     opensearch_security.ui.openid.login.buttonname: "Log in with Google account"
     opensearch_security.ui.openid.login.brandimage: "https://docs.opensearch.org/assets/brand/PNG/Mark/opensearch_mark_default.png"
@@ -64,7 +39,6 @@ config:
     opensearch_security.openid.scope: 'openid profile email'
     opensearch_security.openid.verify_hostnames: false
     opensearch_security.openid.refresh_tokens: false
-
     opensearch_security.openid.connect_url: "https://accounts.google.com/.well-known/openid-configuration"
     opensearch_security.openid.client_id: 51224518517-vdbejevut7fbtab1nl7bm4j9lsatahne.apps.googleusercontent.com
     opensearch_security.openid.client_secret: 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
@@ -75,20 +49,16 @@ config:
     opensearchDashboards.dashboardAdmin.users: ["admin", "test1"]
     assistant.chat.enabled: false
     opensearch.ignoreVersionMismatch: true
-
     uiSettings:
       overrides:
         "query:enhancements:enabled": true
         "query:dataSource:readOnly": false
         "query:dataSourceReadOnly": false
         "home:useNewHomePage": true
-
     queryEnhancements.queryAssist.summary.enabled: true
     assistant.smartAnomalyDetector.enabled: true
     assistant.alertInsight.enabled: true
     assistant.text2viz.enabled: true
-    
     flowFrameworkDashboards.enabled: true
-
 global:
   dockerRegistry: public.ecr.aws
