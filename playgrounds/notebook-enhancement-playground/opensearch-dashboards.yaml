@@ -1,8 +1,7 @@
 replicaCount: 1
 image:
-  repository: "opensearchproject/opensearch-dashboards"
-  tag: "3.0.0"
-
+  repository: "r9h9r7k4/opensearch-dashboards-dev"
+  tag: "14965178854"
 # Custom OpenSearch-Dashboards configuration
 config:
   opensearch_dashboards.yml:
@@ -15,4 +14,5 @@ config:
         "home:useNewHomePage": true
     opensearchDashboards.dashboardAdmin.users: ["admin"]
     queryEnhancements.queryAssist.summary.enabled: true
-    
+global:
+  dockerRegistry: public.ecr.aws
