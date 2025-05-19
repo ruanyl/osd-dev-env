@@ -1,7 +1,7 @@
 schema-version: "1.1"
 build:
   name: OpenSearch Dashboards
-  version: 3.0.0
+  version: 3.1.0
 ci:
   image:
     name: opensearchstaging/ci-runner:ci-runner-almalinux8-opensearch-dashboards-build-v1
@@ -15,18 +15,9 @@ components:
   - name: assistantDashboards
     repository: https://github.com/opensearch-project/dashboards-assistant.git
     ref: "main"
-  - name: reportsDashboards
-    repository: https://github.com/opensearch-project/dashboards-reporting.git
-    ref: "main"
-  - name: anomalyDetectionDashboards
-    repository: https://github.com/opensearch-project/anomaly-detection-dashboards-plugin.git
-    ref: "main"
   - name: alertingDashboards
-    repository: https://github.com/opensearch-project/alerting-dashboards-plugin.git
-    ref: "main"
-  - name: securityAnalyticsDashboards
-    repository: https://github.com/opensearch-project/security-analytics-dashboards-plugin.git
-    ref: "main"
+    repository: https://github.com/SuZhou-Joe/alerting-dashboards-plugin.git
+    ref: "feature/enhanced-notebook"
   - name: securityDashboards
     repository: https://github.com/opensearch-project/security-dashboards-plugin.git
     ref: "main"
