@@ -14,5 +14,6 @@ config:
         "home:useNewHomePage": true
     opensearchDashboards.dashboardAdmin.users: ["admin"]
     queryEnhancements.queryAssist.summary.enabled: true
+    assistant.chat.enabled: true
 global:
   dockerRegistry: public.ecr.aws
