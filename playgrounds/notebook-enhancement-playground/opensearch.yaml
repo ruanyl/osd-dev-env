@@ -1,5 +1,5 @@
 replicas: 2
 
 image:
-  repository: "opensearchproject/opensearch"
+  repository: "opensearchstaging/opensearch"
   tag: "3.1.0"
