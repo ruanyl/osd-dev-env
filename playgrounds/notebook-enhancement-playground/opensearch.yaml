@@ -2,4 +2,4 @@ replicas: 2
 
 image:
   repository: "opensearchproject/opensearch"
-  tag: "3.0.0"
+  tag: "3.1.0"
