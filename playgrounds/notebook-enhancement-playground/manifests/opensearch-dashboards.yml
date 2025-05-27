@@ -21,3 +21,6 @@ components:
   - name: notebookDashboards
     repository: https://github.com/SuZhou-Joe/dashboards-observability.git
     ref: "feature/standalone-notebook"
+  - name: securityDashboards
+    repository: https://github.com/opensearch-project/security-dashboards-plugin.git
+    ref: "main"
