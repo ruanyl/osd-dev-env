@@ -11,13 +11,13 @@ components:
     ref: "main"
   - name: observabilityDashboards
     repository: https://github.com/SuZhou-Joe/dashboards-observability.git
-    ref: "feature/enhanced-notebook"
+    ref: "notebook_compatible"
   - name: assistantDashboards
     repository: https://github.com/opensearch-project/dashboards-assistant.git
     ref: "main"
   - name: alertingDashboards
     repository: https://github.com/SuZhou-Joe/alerting-dashboards-plugin.git
     ref: "feature/enhanced-notebook"
-  - name: securityDashboards
-    repository: https://github.com/opensearch-project/security-dashboards-plugin.git
-    ref: "main"
+  - name: notebookDashboards
+    repository: https://github.com/SuZhou-Joe/dashboards-observability.git
+    ref: "feature/standalone-notebook"
