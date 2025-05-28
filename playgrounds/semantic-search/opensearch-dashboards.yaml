@@ -1,4 +1,6 @@
 replicaCount: 1
 image:
-  repository: "opensearchstaging/opensearch-dashboards"
-  tag: "3.1.0"
+  repository: "r9h9r7k4/opensearch-dashboards-dev"
+  tag: "15293337006"
+global:
+  dockerRegistry: public.ecr.aws
