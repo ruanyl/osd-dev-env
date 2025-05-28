@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: "r9h9r7k4/opensearch-dashboards-dev"
-  tag: "14986895056"
+  tag: "15297330908"
 config:
   # Default OpenSearch Dashboards configuration from docker image of Dashboards
   opensearch_dashboards.yml:
@@ -60,7 +60,6 @@ config:
     assistant.alertInsight.enabled: true
     assistant.text2viz.enabled: true
     flowFrameworkDashboards.enabled: true
-
 ingress:
   annotations:
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
@@ -70,6 +69,5 @@ ingress:
       paths:
         - path: /
           backend: {}
-
 global:
   dockerRegistry: public.ecr.aws
