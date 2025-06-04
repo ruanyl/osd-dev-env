@@ -25,3 +25,12 @@ jobs:
     secrets:
       aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
       aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  build-notebook:
+    uses: ./.github/workflows/build-opensearch-dashboards.yml
+    with:
+      deployment_name: "playgrounds/notebook-enhancement-playground"
+      version: "3.1.0"
+      node_version: "20.18.3"
+    secrets:
+      aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

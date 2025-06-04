@@ -7,8 +7,8 @@ ci:
     name: opensearchstaging/ci-runner:ci-runner-almalinux8-opensearch-dashboards-build-v1
 components:
   - name: OpenSearch-Dashboards
-    repository: https://github.com/opensearch-project/OpenSearch-Dashboards.git
-    ref: "main"
+    repository: https://github.com/raintygao/OpenSearch-Dashboards.git
+    ref: "notebook"
   - name: observabilityDashboards
     repository: https://github.com/SuZhou-Joe/dashboards-observability.git
     ref: "notebook_compatible"
