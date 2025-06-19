@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
-  repository: "opensearchstaging/opensearch-dashboards"
-  tag: "3.1.0"
+  repository: "r9h9r7k4/opensearch-dashboards-dev"
+  tag: "15752571429-playgrounds-mfe-poc"
 config:
   # Default OpenSearch Dashboards configuration from docker image of Dashboards
   opensearch_dashboards.yml:
@@ -20,3 +20,5 @@ config:
     uiSettings:
       overrides:
         "home:useNewHomePage": true
+global:
+  dockerRegistry: public.ecr.aws
