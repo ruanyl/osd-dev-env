@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: "r9h9r7k4/opensearch-dashboards-dev"
-  tag: "15703719040-playgrounds-notebook-enhancement-playground"
+  tag: "15838080627-playgrounds-notebook-enhancement-playground"
 # Custom OpenSearch-Dashboards configuration
 config:
   opensearch_dashboards.yml:
