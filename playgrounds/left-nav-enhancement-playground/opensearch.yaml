@@ -1,0 +1,22 @@
+replicas: 2
+
+image:
+  repository: "opensearchstaging/opensearch"
+  tag: "3.1.0"
+
+config:
+  opensearch.yml:
+    plugins:
+      security:
+        system_indices.enabled: false
+      ml_commons:
+        agent_framework_enabled: true
+
+plugins:
+  enabled: true
+  removeList:
+    - opensearch-skills
+    - opensearch-ml
+  installList:
+    - https://github.com/Hailong-am/ml-commons/releases/download/agent_fix_2/opensearch-ml-3.1.0.0-SNAPSHOT.zip
+    - https://github.com/Hailong-am/skills/releases/download/3.1-snapshot/opensearch-skills-3.1.0.0-SNAPSHOT.zip

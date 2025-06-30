@@ -1,0 +1,19 @@
+replicaCount: 1
+image:
+  repository: "r9h9r7k4/opensearch-dashboards-dev"
+  tag: "15864322070-playgrounds-notebook-enhancement-playground"
+# Custom OpenSearch-Dashboards configuration
+config:
+  opensearch_dashboards.yml:
+    workspace.enabled: true
+    savedObjects.permission.enabled: true
+    data_source.enabled: true
+    uiSettings:
+      overrides:
+        "query:enhancements:enabled": true
+        "home:useNewHomePage": true
+    opensearchDashboards.dashboardAdmin.users: ["admin"]
+    queryEnhancements.queryAssist.summary.enabled: true
+    assistant.chat.enabled: true
+global:
+  dockerRegistry: public.ecr.aws
