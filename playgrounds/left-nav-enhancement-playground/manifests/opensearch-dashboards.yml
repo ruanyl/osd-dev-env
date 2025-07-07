@@ -15,6 +15,6 @@ components:
   - name: securityDashboards
     repository: https://github.com/opensearch-project/security-dashboards-plugin.git
     ref: "main"
-  - name: anomaly-detection-dashboards-plugin
+  - name: anomalyDetectionDashboards
     repository: https://github.com/SuZhou-Joe/anomaly-detection-dashboards-plugin.git
     ref: "feature/left-nav-icons"
