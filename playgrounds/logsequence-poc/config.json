@@ -1,0 +1,6 @@
+{
+  "owner": "ihailong@amazon.com",
+  "cluster": {
+    "name": "opensearch-log-sequence-poc"
+  }
+}
