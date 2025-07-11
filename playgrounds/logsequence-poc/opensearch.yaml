@@ -5,14 +5,12 @@ image:
   tag: "3.1.0"
   pullPolicy: "Always"
 
+opensearchJavaOpts: "-Xmx4G -Xms4G"
+
 resources:
   requests:
     cpu: "4"
     memory: "8Gi"
-
-persistence:
-  size: 100Gi
-
 
 config:
   opensearch.yml:
