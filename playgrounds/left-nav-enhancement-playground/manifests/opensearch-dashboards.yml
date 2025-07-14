@@ -8,7 +8,7 @@ ci:
 components:
   - name: OpenSearch-Dashboards
     repository: https://github.com/SuZhou-Joe/OpenSearch-Dashboards.git
-    ref: "feature/icon-in-left-nav"
+    ref: "feature/footer-icon-update"
   - name: assistantDashboards
     repository: https://github.com/opensearch-project/dashboards-assistant.git
     ref: "main"
