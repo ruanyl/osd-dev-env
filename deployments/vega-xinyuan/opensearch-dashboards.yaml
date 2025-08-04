@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
-  repository: "opensearchproject/opensearch-dashboards"
-  tag: "2.19.0"
+  repository: "r9h9r7k4/opensearch-dashboards-dev"
+  tag: "16599735782-playgrounds-new-explore"
 config:
   # Default OpenSearch Dashboards configuration from docker image of Dashboards
   opensearch_dashboards.yml:
@@ -16,6 +16,10 @@ config:
     assistant.smartAnomalyDetector.enabled: true
     assistant.incontextInsight.enabled: true
     queryEnhancements.queryAssist.summary.enabled: true
+    explore.enabled: true
+    # opensearch_security_analytics.enabled: false
     uiSettings:
       overrides:
         "home:useNewHomePage": true
+global:
+  dockerRegistry: public.ecr.aws
