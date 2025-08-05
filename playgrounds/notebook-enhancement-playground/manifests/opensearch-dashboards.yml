@@ -19,8 +19,8 @@ components:
     repository: https://github.com/SuZhou-Joe/alerting-dashboards-plugin.git
     ref: "feature/enhanced-notebook"
   - name: notebookDashboards
-    repository: https://github.com/SuZhou-Joe/dashboards-notebooks.git
-    ref: "feature/standalone-notebook"
+    repository: https://github.com/opensearch-project/dashboards-investigation.git
+    ref: "main"
   - name: securityDashboards
     repository: https://github.com/opensearch-project/security-dashboards-plugin.git
     ref: "main"
