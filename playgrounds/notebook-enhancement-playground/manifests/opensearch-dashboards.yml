@@ -8,7 +8,7 @@ ci:
 components:
   - name: OpenSearch-Dashboards
     repository: https://github.com/raintygao/OpenSearch-Dashboards.git
-    ref: "notebook"
+    ref: "main"
   - name: observabilityDashboards
     repository: https://github.com/SuZhou-Joe/dashboards-observability.git
     ref: "notebook_compatible"
