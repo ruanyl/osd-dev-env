@@ -13,3 +13,9 @@ config:
       ml_commons:
         agent_framework_enabled: true
 
+# plugins:
+#   enabled: true
+#   removeList:
+#     - opensearch-ml
+#   installList:
+#     - https://github.com/wanglam/ml-commons/releases/download/release-1752128196531/opensearch-ml-3.1.0.0-SNAPSHOT-1752128196531.zip
