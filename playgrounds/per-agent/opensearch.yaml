@@ -1,0 +1,15 @@
+replicas: 2
+
+image:
+  repository: "opensearchstaging/opensearch"
+  tag: "3.2.0"
+  pullPolicy: "Always"
+
+config:
+  opensearch.yml:
+    plugins:
+      security:
+        system_indices.enabled: false
+      ml_commons:
+        agent_framework_enabled: true
+
