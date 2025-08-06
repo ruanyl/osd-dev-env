@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: "opensearchstaging/opensearch-dashboards"
-  tag: "3.1.0"
+  tag: "3.2.0"
 config:
   # Default OpenSearch Dashboards configuration from docker image of Dashboards
   opensearch_dashboards.yml:
@@ -20,10 +20,10 @@ config:
     uiSettings:
       overrides:
         "home:useNewHomePage": true
-plugins:
-  enabled: true
-  removeList:
-    - observabilityDashboards
-  installList:
-    - https://github.com/wanglam/dashboards-observability/releases/download/3.1-experimental.16409010698/observabilityDashboards-3.1.0.zip
+# plugins:
+#   enabled: true
+#   removeList:
+#     - observabilityDashboards
+#   installList:
+#     - https://github.com/wanglam/dashboards-observability/releases/download/3.1-experimental.16409010698/observabilityDashboards-3.1.0.zip
 
