@@ -1,4 +1,5 @@
-replicas: 2
+replicas: 1
+singleNode: true
 
 image:
   repository: "opensearchstaging/opensearch"
@@ -6,7 +7,6 @@ image:
   pullPolicy: "Always"
 
 opensearchJavaOpts: "-Xmx4G -Xms4G"
-
 resources:
   requests:
     cpu: "4"
@@ -19,3 +19,12 @@ config:
         system_indices.enabled: false
       ml_commons:
         agent_framework_enabled: true
+
+plugins:
+  enabled: true
+  removeList:
+    - opensearch-skills
+    - opensearch-sql
+  installList:
+    - https://github.com/Hailong-am/skills/releases/download/logseq%2Bindex_insight/opensearch-skills-3.1.0.0-SNAPSHOT.zip
+    - https://github.com/Hailong-am/sql/releases/download/patterns/opensearch-sql-3.1.0.0-SNAPSHOT.zip
