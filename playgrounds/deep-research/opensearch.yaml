@@ -2,7 +2,7 @@ replicas: 2
 
 image:
   repository: "opensearchstaging/opensearch"
-  tag: "3.1.0"
+  tag: "3.2.0"
   pullPolicy: "Always"
 
 config:
@@ -20,8 +20,8 @@ plugins:
     - opensearch-skills
     - opensearch-ml
   installList:
-    - https://github.com/wanglam/ml-commons/releases/download/release-1752128196531/opensearch-ml-3.1.0.0-SNAPSHOT-1752128196531.zip
-    - https://github.com/Hailong-am/skills/releases/download/logseq%2Bindex_insight/opensearch-skills-3.1.0.0-SNAPSHOT.zip
+    - https://github.com/ruanyl/osd-dev-env/releases/download/opensearch-ml-3.2.0.0-SNAPSHOT/opensearch-ml-3.2.0.0-SNAPSHOT.zip
+    - https://github.com/Hailong-am/skills/releases/download/3.2-insight-logseq/opensearch-skills-3.2.0.0-SNAPSHOT.zip
 
 
 opensearchJavaOpts: "-Xmx8G -Xms8G"
