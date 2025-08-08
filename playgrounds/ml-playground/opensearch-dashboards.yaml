@@ -40,3 +40,13 @@ config:
     opensearchDashboards.branding.useExpandedHeader: false
     server.host: 0.0.0.0
     opensearch_security.auth.anonymous_auth_enabled: true
+
+ingress:
+  annotations:
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/ssl-redirect: "443"
+  hosts:
+    - host: ml.playground.opensearch.org
+      paths:
+        - path: /
+          backend: {}
