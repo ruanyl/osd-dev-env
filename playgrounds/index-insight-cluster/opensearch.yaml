@@ -8,6 +8,8 @@ image:
 plugins:
   enabled: true
   removeList:
+    - opensearch-skills
     - opensearch-ml
   installList:
     - https://github.com/ruanyl/osd-dev-env/releases/download/opensearch-ml-3.2.0.0-SNAPSHOT/opensearch-ml-3.2.0.0-SNAPSHOT.zip
+    - https://github.com/ruanyl/osd-dev-env/releases/download/opensearch-skills-3.2.0.0-SNAPSHOT/opensearch-skills-3.2.0.0-SNAPSHOT.zip
