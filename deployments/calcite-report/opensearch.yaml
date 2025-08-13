@@ -1,0 +1,13 @@
+replicas: 2
+
+image:
+  repository: "opensearchstaging/opensearch"
+  tag: "3.1.0"
+
+config:
+  opensearch.yml:
+    plugins:
+      security:
+        system_indices.enabled: false
+      ml_commons:
+        agent_framework_enabled: true
