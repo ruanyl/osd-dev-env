@@ -1,9 +1,0 @@
-replicaCount: 1
-image:
-  repository: "r9h9r7k4/opensearch-dashboards-dev"
-  tag: "15575077665"
-config:
-  opensearch_dashboards.yml:
-    opensearch.ignoreVersionMismatch: true
-global:
-  dockerRegistry: public.ecr.aws
