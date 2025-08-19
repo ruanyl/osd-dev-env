@@ -26,8 +26,8 @@ plugins:
     - https://github.com/Hailong-am/sql/releases/download/patterns/opensearch-sql-3.2.0.0-SNAPSHOT.zip
 
 
-opensearchJavaOpts: "-Xmx8G -Xms8G"
+opensearchJavaOpts: "-Xmx16G -Xms16G"
 resources:
   requests:
-    cpu: "4"
-    memory: "16Gi"
+    cpu: "8"
+    memory: "32Gi"
