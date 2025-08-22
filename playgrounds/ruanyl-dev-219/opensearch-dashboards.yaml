@@ -1,0 +1,4 @@
+replicaCount: 1
+image:
+  repository: "opensearchproject/opensearch-dashboards"
+  tag: "2.19.0"
