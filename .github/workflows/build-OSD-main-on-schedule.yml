@@ -19,7 +19,7 @@ jobs:
     uses: ./.github/workflows/build-opensearch-dashboards.yml
     with:
       deployment_name: "playgrounds/future-playground"
-      version: "3.2.0"
+      version: "3.3.0"
       node_version: "20.18.3"
       essential_plugins: "securityDashboards,assistantDashboards,flowFrameworkDashboards,anomalyDetectionDashboards,mlCommonsDashboards"
     secrets:
