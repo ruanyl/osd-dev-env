@@ -21,13 +21,13 @@ plugins:
     - opensearch-ml
     - opensearch-sql
   installList:
-    - https://github.com/xinyual/ml-commons/releases/download/index_insight_tool/opensearch-ml-3.2.0.0-SNAPSHOT.zip
+    - https://github.com/xinyual/ml-commons/releases/download/release-0822/opensearch-ml-3.2.0.0-SNAPSHOT.zip
     - https://github.com/Hailong-am/skills/releases/download/3.2-insight-logseq/opensearch-skills-3.2.0.0-SNAPSHOT.zip
     - https://github.com/Hailong-am/sql/releases/download/patterns/opensearch-sql-3.2.0.0-SNAPSHOT.zip
 
 
-opensearchJavaOpts: "-Xmx8G -Xms8G"
+opensearchJavaOpts: "-Xmx16G -Xms16G"
 resources:
   requests:
     cpu: "4"
-    memory: "16Gi"
+    memory: "32Gi"
