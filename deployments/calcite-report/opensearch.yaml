@@ -1,8 +1,8 @@
 replicas: 2
 
 image:
-  repository: "opensearchstaging/opensearch"
-  tag: "3.1.0"
+  repository: "opensearchproject/opensearch"
+  tag: "3.2.0"
 
 config:
   opensearch.yml:
