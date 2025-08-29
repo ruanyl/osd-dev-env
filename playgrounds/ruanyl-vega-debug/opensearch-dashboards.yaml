@@ -1,4 +1,6 @@
 replicaCount: 1
 image:
-  repository: "opensearchstaging/opensearch-dashboards"
-  tag: "3.3.0"
+  repository: "r9h9r7k4/opensearch-dashboards-dev"
+  tag: "17318055216-playgrounds-ruanyl-vega-debug"
+global:
+  dockerRegistry: public.ecr.aws
