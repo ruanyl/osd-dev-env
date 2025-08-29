@@ -1,0 +1,4 @@
+replicaCount: 1
+image:
+  repository: "opensearchstaging/opensearch-dashboards"
+  tag: "3.3.0"
