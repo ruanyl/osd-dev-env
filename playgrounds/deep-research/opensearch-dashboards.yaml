@@ -19,13 +19,9 @@ config:
     # opensearch_security_analytics.enabled: false
     uiSettings:
       overrides:
-        "home:useNewHomePage": true
-plugins:
-  enabled: true
-  removeList:
-    - observabilityDashboards
-  installList:
-    - https://github.com/wanglam/dashboards-observability/releases/download/3.2-experimental.16834654453/observabilityDashboards-3.2.0.zip
+        "home:useNewHomePage": true  
+    investigation.enabled: true
+
 ingress:
   enabled: true
   ingressClassName: alb
