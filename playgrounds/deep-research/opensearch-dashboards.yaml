@@ -27,7 +27,7 @@ plugins:
   removeList:
     - investigationDashboards
   installList:
-    - https://github.com/wanglam/dashboards-investigation/releases/download/3.2-experimental.17390343651/investigationDashboards-3.2.0.zip
+    - https://github.com/wanglam/dashboards-investigation/releases/download/3.2-experimental.17420959982/investigationDashboards-3.2.0.zip
 
 ingress:
   enabled: true
