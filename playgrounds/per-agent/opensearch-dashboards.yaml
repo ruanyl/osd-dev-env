@@ -20,12 +20,12 @@ config:
     uiSettings:
       overrides:
         "home:useNewHomePage": true
-# plugins:
-#   enabled: true
-#   removeList:
-#     - observabilityDashboards
-#   installList:
-#     - https://github.com/wanglam/dashboards-observability/releases/download/3.1-experimental.16409010698/observabilityDashboards-3.1.0.zip
+plugins:
+  enabled: true
+  removeList:
+    - observabilityDashboards
+  installList:
+    - https://github.com/wanglam/dashboards-observability/releases/download/3.2-experimental.16834654453/observabilityDashboards-3.2.0.zip
 
 ingress:
   enabled: true
