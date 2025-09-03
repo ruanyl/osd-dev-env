@@ -20,6 +20,7 @@ config:
     uiSettings:
       overrides:
         "home:useNewHomePage": true
+
 plugins:
   enabled: true
   removeList:
