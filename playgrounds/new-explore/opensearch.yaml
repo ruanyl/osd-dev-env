@@ -11,3 +11,9 @@ config:
         system_indices.enabled: false
       ml_commons:
         agent_framework_enabled: true
+
+opensearchJavaOpts: "-Xmx16G -Xms16G"
+resources:
+  requests:
+    cpu: "4"
+    memory: "32Gi"
