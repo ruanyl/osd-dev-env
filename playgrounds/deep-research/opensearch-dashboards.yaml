@@ -21,6 +21,7 @@ config:
       overrides:
         "home:useNewHomePage": true
     investigation.enabled: true
+    explore.enabled: true
 plugins:
   enabled: true
   removeList:
