@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: "r9h9r7k4/opensearch-dashboards-dev"
-  tag: "17375189518-playgrounds-deep-research"
+  tag: "17452629068-playgrounds-deep-research"
 config:
   # Default OpenSearch Dashboards configuration from docker image of Dashboards
   opensearch_dashboards.yml:
@@ -19,9 +19,8 @@ config:
     # opensearch_security_analytics.enabled: false
     uiSettings:
       overrides:
-        "home:useNewHomePage": true  
+        "home:useNewHomePage": true
     investigation.enabled: true
-
 plugins:
   enabled: true
   removeList:
