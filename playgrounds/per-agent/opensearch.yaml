@@ -20,6 +20,6 @@ plugins:
     - opensearch-ml
     - opensearch-sql
   installList:
-    - https://github.com/pyek-bot/ml-commons/releases/download/main-3.2/opensearch-ml-3.2.0.0-SNAPSHOT.zip
+    - https://github.com/mingshl/ml-commons/archive/refs/tags/3.2.0.0.zip
     - https://github.com/Hailong-am/skills/releases/download/3.2-insight-logseq/opensearch-skills-3.2.0.0-SNAPSHOT.zip
     - https://github.com/Hailong-am/sql/releases/download/patterns/opensearch-sql-3.2.0.0-SNAPSHOT.zip
