@@ -2,7 +2,7 @@ replicas: 2
 
 image:
   repository: "opensearchstaging/opensearch"
-  tag: "3.1.0"
+  tag: "3.2.0"
   pullPolicy: "Always"
 
 config:
