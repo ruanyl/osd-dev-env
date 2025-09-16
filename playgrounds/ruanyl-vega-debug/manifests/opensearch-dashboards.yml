@@ -9,7 +9,7 @@ ci:
 components:
   - name: OpenSearch-Dashboards
     repository: https://github.com/ruanyl/OpenSearch-Dashboards.git
-    ref: "update-vega-viz-theme"
+    ref: "add-option-to-disable-vega-debug"
   - name: functionalTestDashboards
     repository: https://github.com/opensearch-project/opensearch-dashboards-functional-test.git
     ref: "main"

@@ -1,8 +1,8 @@
 replicas: 2
 
 image:
-  repository: "opensearchstaging/opensearch"
-  tag: "3.3.0"
+  repository: "opensearchproject/opensearch"
+  tag: "3.2.0"
 
 config:
   opensearch.yml:
@@ -11,9 +11,3 @@ config:
         system_indices.enabled: false
       ml_commons:
         agent_framework_enabled: true
-
-opensearchJavaOpts: "-Xmx16G -Xms16G"
-resources:
-  requests:
-    cpu: "4"
-    memory: "32Gi"

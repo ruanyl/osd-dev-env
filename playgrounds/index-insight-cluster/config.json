@@ -1,0 +1,6 @@
+{
+  "owner": "yubonluo@amazon.com",
+  "cluster": {
+    "name": "opensearch-playground"
+  }
+}

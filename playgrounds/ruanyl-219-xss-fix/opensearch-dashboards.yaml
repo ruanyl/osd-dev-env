@@ -1,0 +1,6 @@
+replicaCount: 1
+image:
+  repository: "r9h9r7k4/opensearch-dashboards-dev"
+  tag: "17153578562-playgrounds-ruanyl-219-xss-fix"
+global:
+  dockerRegistry: public.ecr.aws
