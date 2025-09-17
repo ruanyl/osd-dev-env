@@ -1,5 +1,5 @@
 replicaCount: 1
 image:
   repository: "opensearchstaging/opensearch-dashboards"
-  tag: "3.0.0"
+  tag: "3.2.0"
   pullPolicy: "Always"
