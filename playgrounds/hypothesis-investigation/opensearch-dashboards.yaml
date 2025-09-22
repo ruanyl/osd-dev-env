@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: "r9h9r7k4/opensearch-dashboards-dev"
-  tag: "17452629068-playgrounds-hypothesis-investigation"
+  tag: "17909527451-playgrounds-hypothesis-investigation"
 config:
   # Default OpenSearch Dashboards configuration from docker image of Dashboards
   opensearch_dashboards.yml:
@@ -28,7 +28,6 @@ plugins:
     - investigationDashboards
   installList:
     - https://github.com/wanglam/dashboards-investigation/releases/download/3.2-experimental.17758942368/investigationDashboards-3.2.0.zip
-
 ingress:
   enabled: true
   ingressClassName: alb
