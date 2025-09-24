@@ -21,7 +21,7 @@ plugins:
     - opensearch-ml
     - opensearch-sql
   installList:
-    - https://github.com/yyfamazon/ml-commons/releases/download/cron18/opensearch-ml-3.2.0.0-SNAPSHOT-18.zip
+    - https://github.com/yyfamazon/ml-commons/releases/download/cron19/opensearch-ml-3.2.0.0-SNAPSHOT19.zip
     - https://github.com/Hailong-am/skills/releases/download/3.2-tools/opensearch-skills-3.2.0.0-SNAPSHOT.zip
     - https://github.com/Hailong-am/sql/releases/download/patterns/opensearch-sql-3.2.0.0-SNAPSHOT.zip
 
