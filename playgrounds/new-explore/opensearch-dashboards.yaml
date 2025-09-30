@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: "r9h9r7k4/opensearch-dashboards-dev"
-  tag: "17457069371-playgrounds-new-explore"
+  tag: "18122143588-playgrounds-new-explore"
 config:
   # Default OpenSearch Dashboards configuration from docker image of Dashboards
   opensearch_dashboards.yml:
@@ -23,7 +23,6 @@ config:
         "home:useNewHomePage": true
 global:
   dockerRegistry: public.ecr.aws
-
 ingress:
   enabled: true
   ingressClassName: alb
