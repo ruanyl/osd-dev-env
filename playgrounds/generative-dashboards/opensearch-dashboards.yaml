@@ -27,3 +27,19 @@ plugins:
     - assistantDashboards
   installList:
     - https://github.com/lunalzm/dashboards-assistant/releases/download/test/assistantDashboards-3.1.0.zip
+
+ingress:
+  enabled: true
+  ingressClassName: alb
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/security-groups: sg-0f6042abc5948740a
+    alb.ingress.kubernetes.io/manage-backend-security-group-rules: "true"
+  labels: {}
+  hosts:
+    - paths:
+        - path: /
+          backend: {}
+
