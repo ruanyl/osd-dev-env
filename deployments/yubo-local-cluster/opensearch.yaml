@@ -1,6 +1,0 @@
-replicas: 2
-
-image:
-  repository: "opensearchstaging/opensearch"
-  tag: "3.0.0-beta1"
-  pullPolicy: "Always"
