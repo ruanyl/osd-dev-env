@@ -1,0 +1,6 @@
+{
+  "owner": "junqiu@amazon.com",
+  "cluster": {
+    "name": "opensearch-dev"
+  }
+}
