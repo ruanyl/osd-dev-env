@@ -1,14 +1,7 @@
 replicaCount: 1
 image:
   repository: "opensearchproject/opensearch-dashboards"
-  tag: "3.1.0"
-
-plugins:
-  enabled: true
-  removeList:
-    - searchRelevanceDashboards
-  installList:
-    - https://github.com/Hailong-am/osd-dev-env/releases/download/searchrelevence/searchRelevanceDashboards-3.1.0.zip
+  tag: "3.3.0"
 
 config:
   # Default OpenSearch Dashboards configuration from docker image of Dashboards
