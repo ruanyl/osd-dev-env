@@ -9,7 +9,7 @@ config:
     workspace.enabled: true
     savedObjects.permission.enabled: true
     assistant.enabled: true
-    assistant.chat.enabled: false
+    assistant.chat.enabled: true
     assistant.next.enabled: true
     assistant.text2viz.enabled: true
     assistant.alertInsight.enabled: true
