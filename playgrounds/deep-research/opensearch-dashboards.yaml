@@ -22,6 +22,7 @@ config:
         "home:useNewHomePage": true
     investigation.enabled: true
     explore.enabled: true
+    data_source.ssl.verificationMode: none
 plugins:
   enabled: true
   removeList:
