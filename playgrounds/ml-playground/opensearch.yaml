@@ -2,7 +2,7 @@ replicas: 4
 
 image:
   repository: "opensearchproject/opensearch"
-  tag: "3.3.0"
+  tag: "3.3.2"
 
 opensearchJavaOpts: "-Xmx24G -Xms24G"
 resources:
