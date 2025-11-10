@@ -438,7 +438,7 @@ securityConfig:
                 - "indices:admin/plugins/replication/index/update"
                 - "indices:admin/plugins/replication/index/status_check"
 
-        # Allow users to read ML stats/models/tasks
+        # Allow users to read ML stats/models/tasks/agents
         ml_read_access:
           reserved: true
           cluster_permissions:
@@ -447,6 +447,8 @@ securityConfig:
             - 'cluster:admin/opensearch/ml/models/search'
             - 'cluster:admin/opensearch/ml/tasks/get'
             - 'cluster:admin/opensearch/ml/tasks/search'
+            - 'cluster:admin/opensearch/ml/agents/search'
+            - 'cluster:admin/opensearch/ml/agents/get'
 
         # Allows users to read Notifications config/channels
         notifications_read_access:
@@ -477,6 +479,29 @@ securityConfig:
                 - '*'
               allowed_actions:
                 - 'indices_monitor'
+
+        # Allow users to read Flow Framework workflows and workflow states
+        flow_framework_read_access:
+          reserved: true
+          cluster_permissions:
+            - 'cluster:admin/opensearch/flow_framework/workflow/get'
+            - 'cluster:admin/opensearch/flow_framework/workflow/search'
+            - 'cluster:admin/opensearch/flow_framework/workflow_state/get'
+            - 'cluster:admin/opensearch/flow_framework/workflow_state/search'
+
+        # Allows users to use all Flow Framework functionality
+        flow_framework_full_access:
+          reserved: true
+          cluster_permissions:
+            - 'cluster_monitor'
+            - 'cluster:admin/opensearch/flow_framework/*'
+          index_permissions:
+            - index_patterns:
+                - '*'
+              allowed_actions:
+                - 'indices_monitor'
+                - 'indices:admin/aliases/get'
+                - 'indices:admin/mappings/get'
 
         # Anonymous access role
         opendistro_security_anonymous_role:
