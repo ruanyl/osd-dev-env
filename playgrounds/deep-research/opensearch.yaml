@@ -20,7 +20,7 @@ plugins:
     - opensearch-skills
     - opensearch-ml
   installList:
-    - https://github.com/wanglam/ml-commons/releases/download/experimental-release-1761965747569/opensearch-ml-3.3.2.0-SNAPSHOT-1762322025420.zip
+    - https://github.com/wanglam/ml-commons/releases/download/experimental-release-1761965747569/opensearch-ml-3.3.2.0-SNAPSHOT-1762755936417.zip
     - https://github.com/Hailong-am/skills/releases/download/main/opensearch-skills-3.3.2.0-SNAPSHOT.zip
 
 
