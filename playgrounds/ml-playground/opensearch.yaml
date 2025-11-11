@@ -611,6 +611,10 @@ securityConfig:
           backend_roles:
           - "opendistro_security_anonymous_backendrole"
 
+        flow_framework_read_access:
+          backend_roles:
+          - "opendistro_security_anonymous_backendrole"
+
         notifications_read_access:
           backend_roles:
           - "opendistro_security_anonymous_backendrole"
