@@ -532,6 +532,8 @@ securityConfig:
             - cluster:admin/opensearch/securityanalytics/detector/get
             # For using sql join query
             - "indices:data/read/scroll*"
+            # For agentic search
+            - "cluster:admin/opensearch/ml/execute"
           index_permissions:
             - index_patterns:
               - ".kibana"
