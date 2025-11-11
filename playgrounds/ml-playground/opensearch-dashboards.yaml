@@ -34,6 +34,13 @@ config:
     server.host: 0.0.0.0
     opensearch_security.auth.anonymous_auth_enabled: true
 
+plugins:
+  enabled: true
+  removeList:
+    - flowFrameworkDashboards
+  installList:
+    - https://github.com/ohltyler/dashboards-flow-framework/releases/download/demo-11-10/dashboards-flow-framework-3.3.0.0.zip
+
 ingress:
   annotations:
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
