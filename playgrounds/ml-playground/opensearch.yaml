@@ -532,8 +532,12 @@ securityConfig:
             - cluster:admin/opensearch/securityanalytics/detector/get
             # For using sql join query
             - "indices:data/read/scroll*"
-            # For agentic search
+            # For agentic search and search relevance
             - "cluster:admin/opensearch/ml/execute"
+            - "cluster:admin/opensearch/ml/predict"
+            - "cluster:admin/opensearch/ml/trainAndPredict"
+            - "cluster:admin/opensearch/ml/connectors/search"
+            - "cluster:admin/opensearch/ml/agents/get"
           index_permissions:
             - index_patterns:
               - ".kibana"
