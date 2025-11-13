@@ -39,7 +39,7 @@ plugins:
   removeList:
     - flowFrameworkDashboards
   installList:
-    - https://github.com/ohltyler/dashboards-flow-framework/releases/download/demo-11-10/dashboards-flow-framework-3.3.0.0.zip
+    - https://github.com/ohltyler/dashboards-flow-framework/releases/download/demo-11-13/dashboards-flow-framework-3.3.0.0.zip
 
 ingress:
   annotations:
