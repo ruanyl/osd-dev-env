@@ -28,6 +28,14 @@ ingress:
   path: /
   hosts: [""]
 
+config:
+  # Set some custom settings for ML commons plugin
+  opensearch.yml:
+    plugins.ml_commons.memory_rest_access_restricted_backend_roles:
+      - opendistro_security_anonymous_backendrole
+    plugins.ml_commons.memory_cleanup_usernames:
+      - opendistro_security_anonymous
+
 securityConfig:
   config:
     data:
