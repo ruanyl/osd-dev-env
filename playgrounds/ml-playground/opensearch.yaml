@@ -676,3 +676,10 @@ securityConfig:
         admin_tenant:
           reserved: false
           description: "Demo tenant for admin user"
+
+plugins:
+  enabled: true
+  removeList:
+    - opensearch-ml
+  installList:
+    - https://github.com/rithin-pullela-aws/ml-commons/releases/download/playground-mem-cleanup/opensearch-ml-3.3.2.0-SNAPSHOT.zip
