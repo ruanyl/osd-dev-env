@@ -688,6 +688,8 @@ securityConfig:
 plugins:
   enabled: true
   removeList:
+    - opensearch-skills
     - opensearch-ml
   installList:
     - https://github.com/rithin-pullela-aws/ml-commons/releases/download/playground-mem-cleanup/opensearch-ml-3.3.2.0-SNAPSHOT.zip
+    - https://github.com/Hailong-am/skills/releases/download/main/opensearch-skills-3.3.2.0-SNAPSHOT.zip
