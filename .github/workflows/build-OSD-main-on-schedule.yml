@@ -21,7 +21,7 @@ jobs:
       deployment_name: "playgrounds/future-playground"
       version: "3.4.0"
       node_version: "20.18.3"
-      essential_plugins: "securityDashboards,assistantDashboards,anomalyDetectionDashboards,mlCommonsDashboards"
+      essential_plugins: "securityDashboards,assistantDashboards,mlCommonsDashboards"
     secrets:
       aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
       aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
