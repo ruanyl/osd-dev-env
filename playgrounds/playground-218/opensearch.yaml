@@ -1,0 +1,5 @@
+replicas: 2
+
+image:
+  repository: "opensearchproject/opensearch"
+  tag: "2.18.0"
