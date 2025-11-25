@@ -1,6 +1,6 @@
 {
   "owner": "jiaruj@amazon.com",
   "cluster": {
-    "name": "olly-playground"
+    "name": "opensearch-dev"
   }
 }
