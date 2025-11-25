@@ -19,14 +19,6 @@ ingress:
   path: /
   hosts: [""]
 
-config:
-  # Set some custom settings for ML commons plugin
-  opensearch.yml:
-    plugins.ml_commons.memory_rest_access_restricted_backend_roles:
-      - opendistro_security_anonymous_backendrole
-    plugins.ml_commons.memory_cleanup_usernames:
-      - opendistro_security_anonymous
-
 securityConfig:
   config:
     data:
@@ -675,12 +667,3 @@ securityConfig:
         admin_tenant:
           reserved: false
           description: "Demo tenant for admin user"
-
-plugins:
-  enabled: true
-  removeList:
-    - opensearch-skills
-    - opensearch-ml
-  installList:
-    - https://github.com/rithin-pullela-aws/ml-commons/releases/download/playground-mem-cleanup/opensearch-ml-3.3.2.0-SNAPSHOT.zip
-    - https://github.com/Hailong-am/skills/releases/download/main/opensearch-skills-3.3.2.0-SNAPSHOT.zip
