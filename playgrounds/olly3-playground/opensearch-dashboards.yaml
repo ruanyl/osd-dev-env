@@ -19,7 +19,7 @@ config:
     - securitytenant
     opensearch.ssl.verificationMode: none
     opensearch.username: kibanaserver
-    opensearch_security.auth.anonymous_auth_enabled: false
+    opensearch_security.auth.anonymous_auth_enabled: true
     opensearch_security.cookie.secure: false
     opensearch_security.cookie.ttl: 86400000
     opensearch_security.multitenancy.enabled: false
@@ -32,7 +32,6 @@ config:
     opensearch_security.session.ttl: 86400000
     opensearchDashboards.branding.useExpandedHeader: false
     server.host: 0.0.0.0
-    opensearch_security.auth.anonymous_auth_enabled: true
 
 ingress:
   enabled: true
