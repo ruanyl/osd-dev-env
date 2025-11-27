@@ -22,6 +22,7 @@ config:
       overrides:
         "home:useNewHomePage": true
     investigation.enabled: true
+    investigation.agenticFeaturesEnabled: true
     explore.enabled: true
     data_source.ssl.verificationMode: none
 ingress:
