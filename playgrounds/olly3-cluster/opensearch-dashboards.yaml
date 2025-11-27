@@ -10,6 +10,7 @@ config:
     savedObjects.permission.enabled: true
     assistant.enabled: true
     assistant.chat.enabled: false
+    opensearch.ignoreVersionMismatch: true
     assistant.next.enabled: true
     assistant.text2viz.enabled: true
     assistant.alertInsight.enabled: true
@@ -23,12 +24,6 @@ config:
     investigation.enabled: true
     explore.enabled: true
     data_source.ssl.verificationMode: none
-plugins:
-  enabled: true
-  removeList:
-    - investigationDashboards
-  installList:
-    - https://github.com/PauiC/dashboards-investigation/releases/download/3.3.0/investigationDashboards-3.3.0.zip
 
 ingress:
   enabled: true
