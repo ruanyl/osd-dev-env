@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: "r9h9r7k4/opensearch-dashboards-dev"
-  tag: "19777381564-playgrounds-lodash-fix"
+  tag: "19777782072-playgrounds-lodash-fix"
 ingress:
   enabled: true
   ingressClassName: alb
