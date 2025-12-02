@@ -20,6 +20,6 @@ plugins:
     - opensearch-ml
   installList:
     - https://github.com/PauiC/ml-commons/releases/download/3.4.0/opensearch-ml-3.4.0.0-SNAPSHOT.zip
-    - https://github.com/PauiC/skills/releases/download/3.4.0/opensearch-ml-3.4.0.0-SNAPSHOT.zip
+    - https://github.com/PauiC/skills/releases/download/3.4.0/opensearch-skills-3.4.0.0-SNAPSHOT.zip
     - https://github.com/PauiC/OpenSearch/releases/download/3.4.0/transport-reactor-netty4-3.4.0-SNAPSHOT.zip
     - https://github.com/PauiC/OpenSearch/releases/download/3.4.0/arrow-flight-rpc-3.4.0-SNAPSHOT.zip
