@@ -8,7 +8,7 @@ image:
 config:
   opensearch.yml:
     opensearch.experimental.feature.transport.stream.enabled: true
-    http.type: reactor-netty4
+    http.type: reactor-netty4-secure
     plugins:
       security:
         system_indices.enabled: false
