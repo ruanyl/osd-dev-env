@@ -1,3 +1,6 @@
 {
-  "owner": "xinyual@amazon.com"
+  "owner": "xinyual@amazon.com",
+  "cluster": {
+    "name": "opensearch-dev"
+  }
 }
