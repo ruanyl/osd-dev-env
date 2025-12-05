@@ -2,7 +2,7 @@ replicas: 2
 
 image:
   repository: "opensearchproject/opensearch"
-  tag: "3.2.0"
+  tag: "3.3.0"
 
 config:
   opensearch.yml:
