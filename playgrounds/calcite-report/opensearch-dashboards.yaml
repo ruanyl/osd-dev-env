@@ -9,7 +9,7 @@ config:
     workspace.enabled: true
     savedObjects.permission.enabled: true
     assistant.enabled: true
-    assistant.chat.enabled: false
+    assistant.chat.enabled: true
     assistant.next.enabled: true
     assistant.text2viz.enabled: true
     assistant.alertInsight.enabled: true
@@ -23,3 +23,18 @@ config:
         "home:useNewHomePage": true
 global:
   dockerRegistry: public.ecr.aws
+ingress:
+  enabled: true
+  ingressClassName: alb
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+    alb.ingress.kubernetes.io/target-type: ip
+    # Add the following security group settings
+    alb.ingress.kubernetes.io/security-groups: sg-0f6042abc5948740a
+    alb.ingress.kubernetes.io/manage-backend-security-group-rules: "true"
+  labels: {}
+  hosts:
+    - paths:
+        - path: /
+          backend: {}
