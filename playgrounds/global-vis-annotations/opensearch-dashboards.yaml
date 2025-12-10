@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
-  repository: "r9h9r7k4/opensearch-dashboards-dev"
-  tag: "19699094187-playgrounds-global-vis-annotations"
+  repository: "opensearchproject/opensearch-dashboards"
+  tag: "3.4.0"
 config:
   # Default OpenSearch Dashboards configuration from docker image of Dashboards
   opensearch_dashboards.yml:
