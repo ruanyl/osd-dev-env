@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
-  repository: "r9h9r7k4/opensearch-dashboards-dev"
-  tag: "19730556956-playgrounds-olly3-cluster"
+  repository: "opensearchproject/opensearch-dashboards"
+  tag: "3.4.0"
 config:
   # Default OpenSearch Dashboards configuration from docker image of Dashboards
   opensearch_dashboards.yml:
@@ -40,5 +40,12 @@ ingress:
     - paths:
         - path: /
           backend: {}
-global:
-  dockerRegistry: public.ecr.aws
+plugins:
+  enabled: true
+  removeList:
+    - assistantDashboards
+    - investigationDashboards
+  installList:
+    - https://github.com/PauiC/dashboards-assistant/releases/download/3.4.0/assistantDashboards-3.4.0.zip
+    - https://github.com/PauiC/dashboards-investigation/releases/download/3.4.0/investigationDashboards-3.4.0.zip
+    -
