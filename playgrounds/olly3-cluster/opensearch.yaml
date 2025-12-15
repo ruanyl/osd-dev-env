@@ -12,6 +12,7 @@ config:
         system_indices.enabled: false
       ml_commons:
         agent_framework_enabled: true
+        index_insight_feature_enabled: true
 
 plugins:
   enabled: true
