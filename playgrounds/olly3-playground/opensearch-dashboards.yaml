@@ -48,4 +48,3 @@ plugins:
   installList:
     - https://github.com/PauiC/dashboards-assistant/releases/download/3.4.0/assistantDashboards-3.4.0.zip
     - https://github.com/PauiC/dashboards-investigation/releases/download/3.4.0/investigationDashboards-3.4.0.zip
-    -
