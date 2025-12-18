@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: "opensearchproject/opensearch-dashboards"
-  tag: "3.3.0"
+  tag: "3.4.0"
 
 config:
   # Default OpenSearch Dashboards configuration from docker image of Dashboards
@@ -34,12 +34,12 @@ config:
     server.host: 0.0.0.0
     opensearch_security.auth.anonymous_auth_enabled: true
 
-plugins:
-  enabled: true
-  removeList:
-    - flowFrameworkDashboards
-  installList:
-    - https://github.com/ohltyler/dashboards-flow-framework/releases/download/demo-11-13/dashboards-flow-framework-3.3.0.0.zip
+# plugins:
+#   enabled: true
+#   removeList:
+#     - flowFrameworkDashboards
+#   installList:
+#     - https://github.com/ohltyler/dashboards-flow-framework/releases/download/demo-11-13/dashboards-flow-framework-3.3.0.0.zip
 
 ingress:
   annotations:
