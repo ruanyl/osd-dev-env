@@ -7,12 +7,16 @@ image:
 
 config:
   opensearch.yml:
+    opensearch.experimental.feature.transport.stream.enabled: true
+    http.type: reactor-netty4-secure
     plugins:
       security:
         system_indices.enabled: false
       ml_commons:
         agent_framework_enabled: true
         index_insight_feature_enabled: true
+        stream_enabled: true
+        ag_ui_enabled: true
 
 extraEnvs:
   - name: OPENSEARCH_ADMIN_PASS

@@ -8,6 +8,8 @@ config:
     opensearchDashboards.dashboardAdmin.users: ["admin"]
     workspace.enabled: true
     data_source.enabled: true
+    contextProvider.enabled: true
+    chat.enabled: true
     savedObjects.permission.enabled: true
     assistant.enabled: true
     assistant.chat.enabled: false
