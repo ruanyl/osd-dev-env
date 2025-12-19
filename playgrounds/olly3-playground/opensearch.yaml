@@ -1,6 +1,6 @@
 replicas: 2
 
 image:
-  repository: "opensearchstaging/opensearch"
+  repository: "opensearchproject/opensearch"
   tag: "3.4.0"
   pullPolicy: "Always"

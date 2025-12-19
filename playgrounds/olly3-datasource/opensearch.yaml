@@ -14,6 +14,10 @@ config:
         agent_framework_enabled: true
         index_insight_feature_enabled: true
 
+extraEnvs:
+  - name: OPENSEARCH_ADMIN_PASS
+    value: <secret:/app/data/demo/internal_users~admin>
+
 plugins:
   enabled: true
   removeList:
