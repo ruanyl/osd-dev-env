@@ -1,8 +1,7 @@
 replicaCount: 1
 image:
   repository: "r9h9r7k4/opensearch-dashboards-dev"
-  tag: "17452629068-playgrounds-deep-research"
-
+  tag: "20420448005-playgrounds-nodejs-22"
 ingress:
   enabled: true
   ingressClassName: alb
