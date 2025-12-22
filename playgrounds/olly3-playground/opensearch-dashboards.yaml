@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
-  repository: "opensearchstaging/opensearch-dashboards"
-  tag: "3.4.0.8743"
+  repository: "opensearchproject/opensearch-dashboards"
+  tag: "3.3.0"
 config:
   # Default OpenSearch Dashboards configuration from docker image of Dashboards
   opensearch_dashboards.yml:
@@ -42,11 +42,3 @@ ingress:
     - paths:
         - path: /
           backend: {}
-plugins:
-  enabled: true
-  removeList:
-    - assistantDashboards
-    - investigationDashboards
-  installList:
-    - https://github.com/PauiC/dashboards-assistant/releases/download/3.4.0/assistantDashboards-3.4.0.zip
-    - https://github.com/PauiC/dashboards-investigation/releases/download/3.4.0/investigationDashboards-3.4.0.zip
