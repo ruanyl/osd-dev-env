@@ -1,0 +1,21 @@
+replicaCount: 1
+image:
+  repository: "r9h9r7k4/opensearch-dashboards-dev"
+  tag: "17452629068-playgrounds-deep-research"
+
+ingress:
+  enabled: true
+  ingressClassName: alb
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/security-groups: sg-0f6042abc5948740a
+    alb.ingress.kubernetes.io/manage-backend-security-group-rules: "true"
+  labels: {}
+  hosts:
+    - paths:
+        - path: /
+          backend: {}
+global:
+  dockerRegistry: public.ecr.aws
