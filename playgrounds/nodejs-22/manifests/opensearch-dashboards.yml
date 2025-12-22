@@ -11,7 +11,7 @@ components:
     repository: https://github.com/wanglam/OpenSearch-Dashboards.git
     ref: "feat-update-node-22"
   - name: observabilityDashboards
-    repository: https://github.com/SuZhou-Joe/dashboards-observability.git
+    repository: https://github.com/opensearch-project/dashboards-observability.git
     ref: "main"
   - name: reportsDashboards
     repository: https://github.com/opensearch-project/dashboards-reporting.git
@@ -35,7 +35,7 @@ components:
     repository: https://github.com/opensearch-project/dashboards-notifications.git
     ref: "main"
   - name: alertingDashboards
-    repository: https://github.com/SuZhou-Joe/alerting-dashboards-plugin.git
+    repository: https://github.com/opensearch-project/alerting-dashboards-plugin.git
     ref: "main"
   - name: securityAnalyticsDashboards
     repository: https://github.com/opensearch-project/security-analytics-dashboards-plugin.git
