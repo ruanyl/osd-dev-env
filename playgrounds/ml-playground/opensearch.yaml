@@ -2,7 +2,7 @@ replicas: 4
 
 image:
   repository: "opensearchproject/opensearch"
-  tag: "3.3.2"
+  tag: "3.4.0"
 
 opensearchJavaOpts: "-Xmx24G -Xms24G"
 resources:
@@ -691,5 +691,5 @@ plugins:
     - opensearch-skills
     - opensearch-ml
   installList:
-    - https://github.com/rithin-pullela-aws/ml-commons/releases/download/playground-mem-cleanup/opensearch-ml-3.3.2.0-SNAPSHOT.zip
-    - https://github.com/Hailong-am/skills/releases/download/main/opensearch-skills-3.3.2.0-SNAPSHOT.zip
+    - https://github.com/rithin-pullela-aws/ml-commons/releases/download/playgroound-ml-commons-3.4/opensearch-ml-3.4.0.0-SNAPSHOT.zip
+    - https://github.com/ohltyler/skills/releases/download/3.4/opensearch-skills-3.4.0.0.zip
