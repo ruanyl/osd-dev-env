@@ -2,5 +2,5 @@ replicas: 2
 
 image:
   repository: "opensearchproject/opensearch"
-  tag: "3.5.0"
+  tag: "3.4.0"
   pullPolicy: "Always"
