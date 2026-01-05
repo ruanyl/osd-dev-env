@@ -29,6 +29,7 @@ jobs:
       deployment_name: ${{ github.event.inputs.deployment_name }}
       version: ${{ github.event.inputs.version }}
       node_version: ${{ github.event.inputs.node_version }}
+      registry_target: ${{ github.event.inputs.registry_target }}
       ESSENTIAL_PLUGINS: ${{ github.event.inputs.essential_plugins }}
     secrets:
       aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
