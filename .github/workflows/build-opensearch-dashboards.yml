@@ -20,6 +20,11 @@ on:
         description: "The essential plugins (comma-separated list)"
         required: false
         type: string
+      registry_target:
+        description: "Target registry for Docker image (ecr or ghcr)"
+        required: false
+        type: string
+        default: "ecr"
     secrets:
       aws_access_key_id:
         required: true
@@ -115,16 +120,25 @@ jobs:
           sudo chmod a+x /usr/local/bin/yq
           /usr/local/bin/yq --version
       - name: Configure AWS credentials
+        if: inputs.registry_target == 'ecr'
         uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{ secrets.aws_access_key_id }}
           aws-secret-access-key: ${{ secrets.aws_secret_access_key }}
           aws-region: ${{ env.AWS_REGION }}
       - name: Login to Amazon ECR
+        if: inputs.registry_target == 'ecr'
         id: login-ecr-public
         uses: aws-actions/amazon-ecr-login@v1
         with:
           registry-type: public
+      - name: Login to GitHub Container Registry
+        if: inputs.registry_target == 'ghcr'
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and assemble
         run: |
           cd opensearch-build
@@ -165,27 +179,45 @@ jobs:
             fi
           fi
       - name: Build and push docker image
-        env:
-          REGISTRY: ${{ steps.login-ecr-public.outputs.registry }}
-          REGISTRY_ALIAS: ${{ env.ECR_REGISTRY_ALIAS }}
-          REPOSITORY: ${{ env.ECR_REPOSITORY }}
         run: |
+          echo "🎯 Target registry: ${{ inputs.registry_target }}"
+
           export CLEAN_NAME=$(echo "${{ env.DEPLOYMENT_NAME }}" | tr '/' '-')
           export IMAGE_TAG="${{ github.run_id }}-${CLEAN_NAME}"
           echo "IMAGE_TAG=${IMAGE_TAG}"
+
+          # Determine registry variables based on target
+          if [ "${{ inputs.registry_target }}" == "ghcr" ]; then
+            REGISTRY="ghcr.io"
+            REGISTRY_OWNER="${{ github.repository_owner }}"
+            REPOSITORY="osd-dev-env"
+            echo "📦 Using GitHub Container Registry"
+          else
+            REGISTRY="${{ steps.login-ecr-public.outputs.registry }}"
+            REGISTRY_OWNER="${{ env.ECR_REGISTRY_ALIAS }}"
+            REPOSITORY="${{ env.ECR_REPOSITORY }}"
+            echo "📦 Using AWS ECR Public"
+          fi
+
+          echo "Registry: $REGISTRY"
+          echo "Owner/Alias: $REGISTRY_OWNER"
+          echo "Repository: $REPOSITORY"
+
           artifact_name=opensearch-dashboards-${{env.VERSION}}-${{ env.PLATFORM }}-${{ env.ARCH }}.tar.gz
           tarball=$(realpath opensearch-build/tar/dist/opensearch-dashboards/$artifact_name)
           cd ./opensearch-build/docker/release
           ./build-image-single-arch.sh -v $IMAGE_TAG -p opensearch-dashboards -a ${{ env.ARCH }} -f ./dockerfiles/opensearch-dashboards.al2023.dockerfile -t $tarball
           docker images
-          docker tag opensearchproject/opensearch-dashboards:$IMAGE_TAG $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG
-          docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG
-          echo "Pushed docker image: $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG"
+          docker tag opensearchproject/opensearch-dashboards:$IMAGE_TAG $REGISTRY/$REGISTRY_OWNER/$REPOSITORY:$IMAGE_TAG
+          docker push $REGISTRY/$REGISTRY_OWNER/$REPOSITORY:$IMAGE_TAG
+          echo "✅ Pushed docker image: $REGISTRY/$REGISTRY_OWNER/$REPOSITORY:$IMAGE_TAG"
 
           cd ${{ github.workspace }}/opensearch-dev-env
-          yq -i '.global.dockerRegistry = "${{ env.REGISTRY }}"' ./${{ env.DEPLOYMENT_NAME }}/opensearch-dashboards.yaml
-          yq -i '.image.repository = "${{ env.REGISTRY_ALIAS }}/${{ env.REPOSITORY }}"' ./${{ env.DEPLOYMENT_NAME }}/opensearch-dashboards.yaml
+          yq -i '.global.dockerRegistry = strenv(REGISTRY)' ./${{ env.DEPLOYMENT_NAME }}/opensearch-dashboards.yaml
+          yq -i '.image.repository = strenv(REGISTRY_OWNER) + "/" + strenv(REPOSITORY)' ./${{ env.DEPLOYMENT_NAME }}/opensearch-dashboards.yaml
           yq -i '.image.tag = strenv(IMAGE_TAG)' ./${{ env.DEPLOYMENT_NAME }}/opensearch-dashboards.yaml
+
+          echo "📝 Updated deployment YAML with registry: $REGISTRY/$REGISTRY_OWNER/$REPOSITORY:$IMAGE_TAG"
       - name: Create pull request
         uses: peter-evans/create-pull-request@v5
         with:
