@@ -188,14 +188,14 @@ jobs:
 
           # Determine registry variables based on target
           if [ "${{ inputs.registry_target }}" == "ghcr" ]; then
-            REGISTRY="ghcr.io"
-            REGISTRY_OWNER="${{ github.repository_owner }}"
-            REPOSITORY="osd-dev-env"
+            export REGISTRY="ghcr.io"
+            export REGISTRY_OWNER="${{ github.repository_owner }}"
+            export REPOSITORY="osd-dev-env"
             echo "📦 Using GitHub Container Registry"
           else
-            REGISTRY="${{ steps.login-ecr-public.outputs.registry }}"
-            REGISTRY_OWNER="${{ env.ECR_REGISTRY_ALIAS }}"
-            REPOSITORY="${{ env.ECR_REPOSITORY }}"
+            export REGISTRY="${{ steps.login-ecr-public.outputs.registry }}"
+            export REGISTRY_OWNER="${{ env.ECR_REGISTRY_ALIAS }}"
+            export REPOSITORY="${{ env.ECR_REPOSITORY }}"
             echo "📦 Using AWS ECR Public"
           fi
 
