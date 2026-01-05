@@ -4,18 +4,23 @@ on:
   workflow_dispatch:
     inputs:
       deployment_name:
-        description: 'The name of the deployment'
+        description: "The name of the deployment"
         required: true
       version:
-        description: 'The version of OpenSearch-Dashboards'
+        description: "The version of OpenSearch-Dashboards"
         required: true
       node_version:
-        description: 'Nodejs version'
+        description: "Nodejs version"
         required: false
       essential_plugins:
         description: "The essential plugins (comma-separated list)"
         required: false
         type: string
+      registry_target:
+        description: "Target registry for Docker image (ecr or ghcr)"
+        required: false
+        type: string
+        default: "ecr"
 
 jobs:
   build-opensearch-dashboards:
