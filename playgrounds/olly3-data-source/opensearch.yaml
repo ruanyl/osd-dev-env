@@ -1,8 +1,8 @@
 replicas: 2
 
 image:
-  repository: "public.ecr.aws/i4d4g5x0/mcp"
-  tag: "latest"
+  repository: "opensearchproject/opensearch"
+  tag: "3.4.0"
   pullPolicy: "Always"
 
 config:
@@ -18,7 +18,12 @@ config:
         stream_enabled: true
         ag_ui_enabled: true
 
-opensearchJavaOpts: "-Xms8g -Xmx8g -Dio.netty.allocator.numDirectArenas=1 -Dio.netty.noUnsafe=false -Dio.netty.tryUnsafe=true -Dio.netty.tryReflectionSetAccessible=true -Dopensearch.performanceanalyzer.enabled=false"
+opensearchJavaOpts: "-Xms4g -Xmx4g -Dio.netty.allocator.numDirectArenas=1 -Dio.netty.noUnsafe=false -Dio.netty.tryUnsafe=true -Dio.netty.tryReflectionSetAccessible=true -Dopensearch.performanceanalyzer.enabled=false"
+
+resources:
+  requests:
+    cpu: "4"
+    memory: "8Gi"
 
 extraEnvs:
   - name: OPENSEARCH_ADMIN_PASS
@@ -31,6 +36,6 @@ plugins:
     - opensearch-ml
   installList:
     - https://github.com/PauiC/ml-commons/releases/download/3.4.0/opensearch-ml-3.4.0.0-SNAPSHOT.zip
-    - https://github.com/PauiC/skills/releases/download/3.4.0/opensearch-skills-3.4.0.0-SNAPSHOT.zip
-    - https://github.com/PauiC/OpenSearch/releases/download/3.4.0/transport-reactor-netty4-3.4.0-SNAPSHOT.zip
+    - org.opensearch.plugin:opensearch-skills:3.4.0.0
+    - https://github.com/Hailong-am/OpenSearch/releases/download/3.4.0-fix1/transport-reactor-netty4-3.4.0-SNAPSHOT.zip
     - https://github.com/PauiC/OpenSearch/releases/download/3.4.0/arrow-flight-rpc-3.4.0-SNAPSHOT.zip
