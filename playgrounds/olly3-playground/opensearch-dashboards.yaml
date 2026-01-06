@@ -8,9 +8,10 @@ config:
     opensearchDashboards.dashboardAdmin.users: ["admin"]
     workspace.enabled: true
     data_source.enabled: true
+    data_source.hideLocalCluster: true
     contextProvider.enabled: true
     chat.enabled: true
-    chat.mlCommonsAgentId: 'M3U9SZsBZpXLDNeQjVz0'
+    chat.mlCommonsAgentId: 'ad26kpsBhs-XD9xwvXYl'
     savedObjects.permission.enabled: true
     assistant.enabled: true
     assistant.chat.enabled: false
