@@ -9,7 +9,7 @@ ci:
 components:
   - name: OpenSearch-Dashboards
     repository: https://github.com/PauiC/OpenSearch-Dashboards.git
-    ref: "chatbot"
+    ref: "main"
   - name: assistantDashboards
     repository: https://github.com/opensearch-project/dashboards-assistant.git
     ref: "main"
