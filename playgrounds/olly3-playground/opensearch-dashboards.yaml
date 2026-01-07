@@ -49,7 +49,7 @@ plugins:
   removeList:
     - investigationDashboards
   installList:
-    - https://github.com/PauiC/dashboards-investigation/releases/download/3.5.0/investigationDashboards-3.5.0.zip
+    - https://github.com/PauiC/dashboards-investigation/releases/download/3.4.0/investigationDashboards-3.4.0.zip
 
 global:
   dockerRegistry: public.ecr.aws
