@@ -14,8 +14,8 @@ components:
     repository: https://github.com/opensearch-project/dashboards-assistant.git
     ref: "main"
   - name: investigationDashboards
-    repository: https://github.com/PauiC/dashboards-investigation.git
+    repository: https://github.com/opensearch-project/dashboards-investigation.git
     ref: "main"
   - name: securityDashboards
-    repository: https://github.com/opensearch-project/security-dashboards-plugin.git
+    repository: https://github.com/PauiC/security-dashboards-plugin.git
     ref: "main"
