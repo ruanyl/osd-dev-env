@@ -19,8 +19,8 @@ jobs:
     uses: ./.github/workflows/build-opensearch-dashboards.yml
     with:
       deployment_name: "playgrounds/future-playground"
-      version: "3.4.0"
-      node_version: "20.18.3"
+      version: "3.5.0"
+      node_version: "22.21.1"
       essential_plugins: "securityDashboards,assistantDashboards,mlCommonsDashboards"
     secrets:
       aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
