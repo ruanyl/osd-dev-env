@@ -9,7 +9,7 @@ ci:
 components:
   - name: OpenSearch-Dashboards
     repository: https://github.com/yubonluo/OpenSearch-Dashboards.git
-    ref: "fork-upgrade-webpack"
+    ref: "upgrade-webpack"
   - name: observabilityDashboards
     repository: https://github.com/opensearch-project/dashboards-observability.git
     ref: "main"
