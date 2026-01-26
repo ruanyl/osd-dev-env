@@ -20,7 +20,7 @@ jobs:
     with:
       deployment_name: "playgrounds/future-playground"
       version: "3.5.0"
-      node_version: "22.21.1"
+      node_version: "22.22.0"
       essential_plugins: "securityDashboards,assistantDashboards,mlCommonsDashboards"
     secrets:
       aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
