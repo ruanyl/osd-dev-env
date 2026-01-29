@@ -35,7 +35,7 @@ plugins:
     - opensearch-skills
     - opensearch-ml
   installList:
-    - https://github.com/Hailong-am/ml-commons/releases/download/3.4-snapshot/opensearch-ml-3.4.0.0-SNAPSHOT.zip
+    - https://github.com/Hailong-am/ml-commons/releases/download/feature%2F3.4-release-prep/opensearch-ml-3.4.0.0-SNAPSHOT.zip
     - org.opensearch.plugin:opensearch-skills:3.4.0.0
     - https://github.com/Hailong-am/OpenSearch/releases/download/3.4.0-fix1/transport-reactor-netty4-3.4.0-SNAPSHOT.zip
     - https://github.com/PauiC/OpenSearch/releases/download/3.4.0/arrow-flight-rpc-3.4.0-SNAPSHOT.zip
