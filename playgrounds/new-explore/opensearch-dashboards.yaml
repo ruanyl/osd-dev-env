@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: "ruanyl/osd-dev-env"
-  tag: "21281306232-playgrounds-new-explore"
+  tag: "21503628828-playgrounds-new-explore"
 config:
   # Default OpenSearch Dashboards configuration from docker image of Dashboards
   opensearch_dashboards.yml:
