@@ -18,7 +18,7 @@ config:
         stream_enabled: true
         ag_ui_enabled: true
 
-opensearchJavaOpts: "-Xms4g -Xmx4g -Dio.netty.allocator.numDirectArenas=1 -Dio.netty.noUnsafe=false -Dio.netty.tryUnsafe=true -Dio.netty.tryReflectionSetAccessible=true -Dopensearch.performanceanalyzer.enabled=false"
+opensearchJavaOpts: "-Xms4g -Xmx4g -Dio.netty.allocator.numDirectArenas=1 -Dio.netty.noUnsafe=false -Dio.netty.tryUnsafe=true -Dio.netty.tryReflectionSetAccessible=true -Dopensearch.performanceanalyzer.enabled=false -Dml.http.client.metrics.enabled=true"
 
 resources:
   requests:
