@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
-  repository: "opensearchproject/opensearch-dashboards"
-  tag: "2.19.0"
+  repository: "ruanyl/osd-dev-env"
+  tag: "21578969614-playgrounds-react18"
 config:
   opensearch_dashboards.yml:
     opensearch.ignoreVersionMismatch: true
