@@ -45,5 +45,4 @@ ingress:
     - paths:
         - path: /
           backend: {}
-global:
-  dockerRegistry: public.ecr.aws
+
