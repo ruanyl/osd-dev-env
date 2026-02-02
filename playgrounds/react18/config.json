@@ -1,0 +1,6 @@
+{
+  "owner": "ananzh@amazon.com",
+  "cluster": {
+    "name": "opensearch-dev"
+  }
+}
