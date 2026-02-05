@@ -18,12 +18,12 @@ config:
         stream_enabled: true
         ag_ui_enabled: true
 
-opensearchJavaOpts: "-Xms12g -Xmx12g -Dio.netty.allocator.numDirectArenas=1 -Dio.netty.noUnsafe=false -Dio.netty.tryUnsafe=true -Dio.netty.tryReflectionSetAccessible=true -Dopensearch.performanceanalyzer.enabled=false"
+opensearchJavaOpts: "-Xms8g -Xmx8g -Dio.netty.allocator.numDirectArenas=1 -Dio.netty.noUnsafe=false -Dio.netty.tryUnsafe=true -Dio.netty.tryReflectionSetAccessible=true -Dopensearch.performanceanalyzer.enabled=false"
 
 resources:
   requests:
-    cpu: "8"
-    memory: "24Gi"
+    cpu: "4"
+    memory: "16Gi"
 
 extraEnvs:
   - name: OPENSEARCH_ADMIN_PASS
