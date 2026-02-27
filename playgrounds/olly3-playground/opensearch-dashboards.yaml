@@ -32,14 +32,14 @@ config:
     explore.enabled: true
     data_source.ssl.verificationMode: none
 
-plugins:
-  enabled: true
-  removeList:
-    - investigationDashboards
-  installList:
-    - https://github.com/yyfamazon/dashboards-investigation/releases/download/prompt/investigationDashboards-3.5.0.zip
+# plugins:
+#   enabled: true
+#   removeList:
+#     - investigationDashboards
+#   installList:
+#     - https://github.com/yyfamazon/dashboards-investigation/releases/download/prompt/investigationDashboards-3.5.0.zip
 
-    
+
 ingress:
   enabled: true
   ingressClassName: alb

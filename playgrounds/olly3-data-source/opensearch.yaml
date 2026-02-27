@@ -35,7 +35,8 @@ plugins:
     - opensearch-skills
     - opensearch-ml
   installList:
-    - https://github.com/yyfamazon/ml-commons/releases/download/caching/opensearch-ml-3.5.0.0-SNAPSHOT.zip
+    - https://github.com/Hailong-am/os-build/releases/download/3.5-ml-playground/opensearch-ml-3.5.0.0-SNAPSHOT.zip
+    # - https://github.com/yyfamazon/ml-commons/releases/download/caching/opensearch-ml-3.5.0.0-SNAPSHOT.zip
     - https://github.com/Hailong-am/os-build/releases/download/3.5-skills-playground/opensearch-skills-3.5.0.0-SNAPSHOT.zip
     - https://github.com/Hailong-am/os-build/releases/download/3.5-reactor-netty4/transport-reactor-netty4-3.5.0-SNAPSHOT.zip
     - https://github.com/Hailong-am/os-build/releases/download/3.5-flight-rpc/arrow-flight-rpc-3.5.0-SNAPSHOT.zip
