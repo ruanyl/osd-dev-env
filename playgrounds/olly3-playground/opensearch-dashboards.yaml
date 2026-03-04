@@ -36,7 +36,8 @@ plugins:
   removeList:
     - investigationDashboards
   installList:
-    - https://github.com/yyfamazon/dashboards-investigation/releases/download/promptRefactorAndCache/investigationDashboards-3.6.0.zip
+    - https://github.com/yyfamazon/dashboards-investigation/releases/download/promptRefactorAndCache5/investigationDashboards-3.6.0.zip
+
 ingress:
   enabled: true
   ingressClassName: alb
