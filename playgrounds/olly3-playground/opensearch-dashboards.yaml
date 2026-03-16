@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: "r9h9r7k4/opensearch-dashboards-dev"
-  tag: "22617523413-playgrounds-olly3-playground"
+  tag: "23138329249-playgrounds-olly3-playground"
   pullPolicy: "Always"
 config:
   # Default OpenSearch Dashboards configuration from docker image of Dashboards
@@ -37,7 +37,6 @@ plugins:
     - investigationDashboards
   installList:
     - https://github.com/yyfamazon/dashboards-investigation/releases/download/promptRefactorAndCache5/investigationDashboards-3.6.0.zip
-
 ingress:
   enabled: true
   ingressClassName: alb
