@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: "r9h9r7k4/opensearch-dashboards-dev"
-  tag: "23138329249-playgrounds-olly3-playground"
+  tag: "23282123774-playgrounds-olly3-playground"
   pullPolicy: "Always"
 config:
   # Default OpenSearch Dashboards configuration from docker image of Dashboards
