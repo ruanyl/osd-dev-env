@@ -2,7 +2,7 @@ replicas: 2
 
 image:
   repository: "opensearchstaging/opensearch"
-  tag: "3.1.0"
+  tag: "3.6.0"
   pullPolicy: "Always"
 
 opensearchJavaOpts: "-Xmx4G -Xms4G"
