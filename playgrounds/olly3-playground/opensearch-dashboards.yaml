@@ -12,7 +12,8 @@ config:
     data_source.hideLocalCluster: false
     contextProvider.enabled: true
     chat.enabled: true
-    chat.mlCommonsAgentId: '_Yr_9ZwBsN2cRSOiXDTz'
+    # chat.mlCommonsAgentId: '_Yr_9ZwBsN2cRSOiXDTz'
+    chat.mlCommonsAgentId: 'JBMLmp0B7kKQIZmesZfx' # without history
     savedObjects.permission.enabled: true
     assistant.enabled: true
     assistant.chat.enabled: false
