@@ -8,7 +8,7 @@ ci:
     name: opensearchstaging/ci-runner:ci-runner-almalinux8-opensearch-dashboards-build-v1
 components:
   - name: OpenSearch-Dashboards
-    repository: https://github.com/yubonluo/OpenSearch-Dashboards.git
+    repository: https://github.com/opensearch-project/OpenSearch-Dashboards.git
     ref: "main"
   - name: observabilityDashboards
     repository: https://github.com/opensearch-project/dashboards-observability.git
@@ -46,9 +46,9 @@ components:
   - name: searchRelevanceDashboards
     repository: https://github.com/opensearch-project/dashboards-search-relevance.git
     ref: "main"
-  - name: assistantDashboards
-    repository: https://github.com/opensearch-project/dashboards-assistant.git
-    ref: "main"
+  # - name: assistantDashboards
+  #   repository: https://github.com/opensearch-project/dashboards-assistant.git
+  #   ref: "main"
   - name: flowFrameworkDashboards
     repository: https://github.com/opensearch-project/dashboards-flow-framework.git
     ref: "main"
