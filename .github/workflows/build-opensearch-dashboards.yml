@@ -141,14 +141,22 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and assemble
         run: |
+          echo "📍 Current directory: $(pwd)"
+          echo "📂 Listing workspace contents:"
+          ls -la
+          
           cd opensearch-build
+          echo "📍 Changed to opensearch-build, current directory: $(pwd)"
           source $NVM_DIR/nvm.sh
           nvm install ${{ env.NODE_VERSION }}
 
           export BUILD_NUMBER=${{ github.run_id }}
           echo "Using BUILD_NUMBER: $BUILD_NUMBER"
 
+          echo "📂 Checking for manifest file:"
+          echo "  Expected path: ../opensearch-dev-env/${{ env.DEPLOYMENT_NAME }}/manifests/opensearch-dashboards.yml"
           if [ -f ../opensearch-dev-env/${{ env.DEPLOYMENT_NAME }}/manifests/opensearch-dashboards.yml ]; then
+            echo "✅ Manifest file found"
             ./build.sh ../opensearch-dev-env/${{ env.DEPLOYMENT_NAME }}/manifests/opensearch-dashboards.yml --architecture ${{ env.ARCH }} --platform ${{ env.PLATFORM }} --continue-on-error
             ./assemble.sh tar/builds/opensearch-dashboards/manifest.yml | tee assemble.log
             echo "Checking installed plugins from assemble.log..."
@@ -177,6 +185,11 @@ jobs:
             else
               echo "✅ All essential plugins were successfully built."
             fi
+          else
+            echo "❌ Manifest file not found!"
+            echo "📂 Contents of ../opensearch-dev-env:"
+            ls -la ../opensearch-dev-env/ || echo "Directory does not exist"
+            exit 1
           fi
       - name: Build and push docker image
         run: |
