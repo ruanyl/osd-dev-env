@@ -1,8 +1,7 @@
 replicaCount: 1
 image:
-  repository: "opensearchproject/opensearch-dashboards"
-  tag: "3.6.0"
-
+  repository: "ruanyl/osd-dev-env"
+  tag: "26432194201-playgrounds-playground-526"
 config:
   # Default OpenSearch Dashboards configuration from docker image of Dashboards
   opensearch_dashboards.yml:
@@ -38,4 +37,4 @@ ingress:
         - path: /
           backend: {}
 global:
-  dockerRegistry: public.ecr.aws
+  dockerRegistry: ghcr.io
