@@ -2,16 +2,14 @@
 schema-version: "1.1"
 build:
   name: OpenSearch Dashboards
-  version: 3.8.0
+  version: 3.7.0
 ci:
   image:
     name: opensearchstaging/ci-runner:ci-runner-almalinux8-opensearch-dashboards-build-v1
 components:
-  # Feature branch under review: opensearch-project/OpenSearch-Dashboards#12424
-  # [Chat] Add dashboard context-aware and enable auto-vis
   - name: OpenSearch-Dashboards
     repository: https://github.com/Qxisylolo/OpenSearch-Dashboards.git
-    ref: "fix/add_text2vis"
+    ref: "feat/add_t2dash"
   - name: functionalTestDashboards
     repository: https://github.com/opensearch-project/opensearch-dashboards-functional-test.git
     ref: "main"
@@ -50,9 +48,6 @@ components:
     ref: "main"
   - name: searchRelevanceDashboards
     repository: https://github.com/opensearch-project/dashboards-search-relevance.git
-    ref: "main"
-  - name: assistantDashboards
-    repository: https://github.com/opensearch-project/dashboards-assistant.git
     ref: "main"
   - name: flowFrameworkDashboards
     repository: https://github.com/opensearch-project/dashboards-flow-framework.git
