@@ -1,21 +1,17 @@
 replicaCount: 1
 image:
-  repository: "opensearchproject/opensearch-dashboards"
-  tag: "3.7.0"
-
+  repository: "r9h9r7k4/opensearch-dashboards-dev"
+  tag: "30963501955-playgrounds-t2dash"
 config:
   opensearch_dashboards.yml:
     opensearch.ignoreVersionMismatch: true
-
     # Chat — points to EC2 Agent Server via nginx (port 80)
     chat:
       enabled: true
       agUiUrl: "http://100.57.244.7/runs"
-
     # Sends the current page context (app id, filters, query) to the agent
     contextProvider:
       enabled: true
-
     # Core features
     explore.enabled: true
     data_source.enabled: true
@@ -23,12 +19,10 @@ config:
     workspace.enabled: true
     savedObjects.permission.enabled: true
     opensearchDashboards.dashboardAdmin.users: ["admin"]
-
     uiSettings:
       overrides:
         "home:useNewHomePage": true
         "query:enhancements:enabled": true
-
 ingress:
   enabled: true
   ingressClassName: alb
@@ -44,3 +38,5 @@ ingress:
     - paths:
         - path: /
           backend: {}
+global:
+  dockerRegistry: public.ecr.aws
