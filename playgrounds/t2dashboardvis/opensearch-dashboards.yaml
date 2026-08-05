@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
-  repository: "opensearchproject/opensearch-dashboards"
-  tag: "3.8.0"
+  repository: "ruanyl/osd-dev-env"
+  tag: "30972316425-playgrounds-t2dashboardvis"
 config:
   opensearch_dashboards.yml:
     opensearch.ignoreVersionMismatch: true
@@ -39,4 +39,4 @@ ingress:
         - path: /
           backend: {}
 global:
-  dockerRegistry: public.ecr.aws
+  dockerRegistry: ghcr.io
