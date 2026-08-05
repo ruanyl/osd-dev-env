@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: "opensearchproject/opensearch-dashboards"
-  tag: "3.7.0"
+  tag: "3.8.0"
 
 config:
   opensearch_dashboards.yml:
