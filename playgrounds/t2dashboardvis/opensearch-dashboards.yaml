@@ -8,7 +8,7 @@ config:
     # Chat — points to EC2 Agent Server via nginx (port 80)
     chat:
       enabled: true
-      agUiUrl: "http://100.57.244.7/runs"
+      agUiUrl: "http://a120fb230b35c4503a819464747ab27b-798777813.us-east-1.elb.amazonaws.com/runs"
     # Sends the current page context (app id, filters, query) to the agent
     contextProvider:
       enabled: true
