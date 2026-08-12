@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: "ruanyl/osd-dev-env"
-  tag: "31488839251-playgrounds-t2dashboardvis"
+  tag: "31566256861-playgrounds-t2dashboardvis"
 config:
   opensearch_dashboards.yml:
     opensearch.ignoreVersionMismatch: true
