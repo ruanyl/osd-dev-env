@@ -27,3 +27,9 @@ securityConfig:
               - GET
             /_cat/nodes:
               - GET
+
+# Restrict the OpenSearch ingress ALB to a specific security group (avoid public 0.0.0.0/0)
+ingress:
+  annotations:
+    alb.ingress.kubernetes.io/security-groups: sg-0f6042abc5948740a
+    alb.ingress.kubernetes.io/manage-backend-security-group-rules: "true"

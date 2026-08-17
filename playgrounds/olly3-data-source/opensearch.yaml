@@ -42,3 +42,9 @@ plugins:
     - https://github.com/Hailong-am/os-build/releases/download/3.5-reactor-netty4/transport-reactor-netty4-3.5.0-SNAPSHOT.zip
     - https://github.com/Hailong-am/os-build/releases/download/3.5-flight-rpc/arrow-flight-rpc-3.5.0-SNAPSHOT.zip
     - https://github.com/Hailong-am/os-build/releases/download/ppl35/opensearch-sql-3.5.0.0-SNAPSHOT.zip
+
+# Restrict the OpenSearch ingress ALB to a specific security group (avoid public 0.0.0.0/0)
+ingress:
+  annotations:
+    alb.ingress.kubernetes.io/security-groups: sg-0f6042abc5948740a
+    alb.ingress.kubernetes.io/manage-backend-security-group-rules: "true"
