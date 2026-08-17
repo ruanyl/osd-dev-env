@@ -13,3 +13,9 @@ plugins:
   installList:
     - https://github.com/ruanyl/osd-dev-env/releases/download/opensearch-ml-3.2.0.0-SNAPSHOT/opensearch-ml-3.2.0.0-SNAPSHOT.zip
     - https://github.com/Hailong-am/skills/releases/download/3.2-insight-logseq/opensearch-skills-3.2.0.0-SNAPSHOT.zip
+
+# Restrict the OpenSearch ingress ALB to a specific security group (avoid public 0.0.0.0/0)
+ingress:
+  annotations:
+    alb.ingress.kubernetes.io/security-groups: sg-0f6042abc5948740a
+    alb.ingress.kubernetes.io/manage-backend-security-group-rules: "true"
