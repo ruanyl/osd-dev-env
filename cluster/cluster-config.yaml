@@ -65,14 +65,18 @@ addonsConfig:
   autoApplyPodIdentityAssociations: true
 
 addons:
-  - name: vpc-cni # no version is specified so it deploys the default version
+  - name: vpc-cni
+    version: latest
   - name: coredns
-    version: latest # auto discovers the latest available
+    version: latest
   - name: kube-proxy
     version: latest
   - name: aws-ebs-csi-driver
+    version: latest
   - name: amazon-cloudwatch-observability
+    version: latest
   - name: eks-pod-identity-agent
+    version: latest
 
 cloudWatch:
   clusterLogging:
